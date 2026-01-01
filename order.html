@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Place Order</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <h1>Place Your Order</h1>
+</header>
+
+<form action="https://api.web3forms.com/submit" method="POST" class="order-form">
+  <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+  <input type="hidden" name="Order Items" id="orderItems">
+
+  <input type="text" name="Name" placeholder="Your Name" required>
+  <input type="tel" name="Mobile" placeholder="Mobile Number" required>
+
+  <select name="Location Type" required>
+    <option value="">Select Location</option>
+    <option>Home</option>
+    <option>Flat</option>
+    <option>Road Side</option>
+  </select>
+
+  <textarea name="Address" placeholder="Full Address / Landmark" required></textarea>
+
+  <button type="submit" onclick="prepareOrder()">Submit Order</button>
+</form>
+
+<script src="js/cart.js"></script>
+</body>
+</html>
