@@ -1,11 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auroo</title>
+    <meta charset="UTF-8" />
+    <title>Kirana Online Order</title>
+    <link rel="stylesheet" href="style.css" />
+
 </head>
+
 <body>
-    
+
+    <!-- HEADER -->
+    <header class="header">
+        <h1>Sharma Kirana Store</h1>
+        <p>Village Delivery • Cash on Delivery</p>
+        <p class="phone">📞 9XXXXXXXXX</p>
+        
+
+    </header>
+
+    <!-- ORDER METHOD CHOICE -->
+    <section class="choice">
+
+        <h2>How would you like to order?</h2>
+        <a href="#cartOrder" class="btn">🛒 Order by Selecting Products</a>
+        <a href="#listOrder" class="btn secondary">📝 Write Your Grocery List</a>
+        
+    </section>
+
+    <!-- ===================== -->
+    <!-- METHOD 1: CART ORDER -->
+    <!-- ===================== -->
+    <section id="cartOrder" class="section">
+        <h2>Order by Selecting Products</h2>
+
+        <!-- PRODUCTS -->
+        <div class="product">
+            <span>Rice (1kg – ₹55)</span>
+            <button onclick="addItem('Rice 1kg')">Add</button>
+        </div>
+
+        <div class="product">
+            <span>Sugar (1kg – ₹42)</span>
+            <button onclick="addItem('Sugar 1kg')">Add</button>
+        </div>
+
+        <div class="product">
+            <span>Oil (1L – ₹160)</span>
+            <button onclick="addItem('Oil 1L')">Add</button>
+        </div>
+
+        <!-- CART -->
+        <h3>Your Order</h3>
+        <ul id="cartList"></ul>
+
+        <!-- CART FORM -->
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+            <input type="hidden" name="Cart Order" id="cartData">
+
+            <input type="text" name="Name" placeholder="Your Name" required>
+            <input type="tel" name="Mobile" placeholder="Mobile Number" required>
+            <textarea name="Address" placeholder="Full Address" required></textarea>
+
+            <button type="submit" onclick="prepareCart()">Place Cart Order</button>
+        </form>
+    </section>
+
+    <!-- ===================== -->
+    <!-- METHOD 2: SIMPLE LIST -->
+    <!-- ===================== -->
+    <section id="listOrder" class="section">
+        <h2>Write Your Grocery List</h2>
+
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+
+            <input type="text" name="Name" placeholder="Your Name" required>
+            <input type="tel" name="Mobile" placeholder="Mobile Number" required>
+
+            <select name="Location Type" required>
+                <option value="">Select Location</option>
+                <option>Home</option>
+                <option>Flat</option>
+                <option>Road Side</option>
+            </select>
+
+            <textarea name="Address" placeholder="Full Address / Landmark" required></textarea>
+
+            <textarea name="Grocery List" class="list" placeholder="Example:
+Rice 2 kg
+Sugar 1 kg
+Oil 1 litre" required></textarea>
+
+            <button type="submit">Send List Order</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>Prices may change • Order confirmed by call</p>
+    </footer>
+
+    <!-- MINIMAL JS (CART ONLY) -->
+    <script>
+        let cart = [];
+
+        function addItem(item) {
+            cart.push(item);
+            renderCart();
+        }
+
+        function renderCart() {
+            const list = document.getElementById("cartList");
+            list.innerHTML = "";
+            cart.forEach(i => {
+                const li = document.createElement("li");
+                li.textContent = i;
+                list.appendChild(li);
+            });
+        }
+
+        function prepareCart() {
+            document.getElementById("cartData").value = cart.join(", ");
+        }
+        
+    </script>
 </body>
+
 </html>
