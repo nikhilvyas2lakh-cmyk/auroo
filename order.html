@@ -1,35 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Place Order</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <title>Kirana Quick Order</title>
+    <link rel="stylesheet" href="order.css">
 </head>
+
 <body>
 
-<header class="header">
-  <h1>Place Your Order</h1>
-</header>
+    <div class="container">
 
-<form action="https://api.web3forms.com/submit" method="POST" class="order-form">
-  <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
-  <input type="hidden" name="Order Items" id="orderItems">
+        <h1>Quick Grocery Order</h1>
+        <p class="note">Write your items one per line</p>
 
-  <input type="text" name="Name" placeholder="Your Name" required>
-  <input type="tel" name="Mobile" placeholder="Mobile Number" required>
+        <form action="https://api.web3forms.com/submit" method="POST">
 
-  <select name="Location Type" required>
-    <option value="">Select Location</option>
-    <option>Home</option>
-    <option>Flat</option>
-    <option>Road Side</option>
-  </select>
+            <!-- Web3Forms Key -->
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
 
-  <textarea name="Address" placeholder="Full Address / Landmark" required></textarea>
+            <!-- Customer Details -->
+            <input type="text" name="Name" placeholder="Your Name" required>
+            <input type="tel" name="Mobile Number" placeholder="Mobile Number" required>
 
-  <button type="submit" onclick="prepareOrder()">Submit Order</button>
-</form>
+            <!-- Location -->
+            <select name="Location Type" required>
+                <option value="">Nearby-location</option>
+                <option>main bus-stand</option>
+                <option>Near parshuram chouk</option>
+                <option>Nala ki dhani</option>
+                <option>Baajar</option>
+                <option>Rohida</option>
+                <option>Gurjaro ki dhani</option>
+                <option>other</option>
 
-<script src="js/cart.js"></script>
+            </select>
+            <!-- location actual-->
+            <input type="search" name="Location" placeholder="Full Address / Landmark" required>
+
+            <!-- <textarea  name="Address" placeholder="Full Address / Landmark" required></textarea> -->
+
+            <!-- SINGLE TODO-LIST FIELD -->
+            <h2>Your Grocery List</h2>
+
+            <textarea name="Grocery List" class="list-field" placeholder="Example:
+Rice 2 kg
+Sugar 1 kg
+Oil 1 litre
+Biscuit 2 packet" required></textarea>
+
+            <p class="hint">
+                • Write one item per line<br>
+                • Any brand is okay<br>
+                • We will call to confirm
+                • Bill will be sent via WhatsApp
+            </p>
+
+            <button type="submit">Send Order</button>
+
+        </form>
+
+    </div>
+
 </body>
+
 </html>

@@ -1,50 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Sharma Kirana Store</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <title>Sharma Kirana Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
+
 <body>
 
-<header class="header">
-  <h1>Sharma Kirana Store</h1>
-  <a href="cart.html" class="cart-link">🛒 Cart</a>
-</header>
+    <!-- <header class="header">
+        <h1>Sharma Kirana Store</h1>
+        <a href="cart.html" class="cart-link">🛒 Cart</a>
+    </header> -->
+    <Header>
+        <nav class="nav-bar" id="navbar">
+            <div class="navbar-primery">
+                <!-- <img src="imgs\mamaearth-logo.avif" alt="logo-me" width="140px" height="31.5px"> -->
+                <a href="index.html">
+                    <div class="logo exile-regular">
+                        <span style="color: #ff9900; font-size: 2em; font-weight: 900;">AUR</span>
+                        <span style="color: #4CAF50; font-size: 2em; font-weight: 900;">OO</span>
+                    </div>
+                </a>
+                <!--
+                <div class="sec search-box">
+                    <input type="text" id="searchInput" class="search-bar" placeholder="Search items..."
+                        onkeyup="searchProducts()" 
+                       
+                    <button class="search-btn" onclick="searchProducts()">Search</button> 
+                </div>/> 
+                     -->
+                <form action="search.html" method="GET" class="sec search-box">
+                    <input type="text" name="q" class="search-bar" placeholder="Search items..." required />
+                    <button type="submit" class="search-btn">Search</button>
+                </form>
 
-<input
-  type="text"
-  id="searchInput"
-  class="search-bar"
-  placeholder="Search items..."
-  onkeyup="searchProducts()"
-/>
 
-<section class="category">
-  <h2>Atta & Rice</h2>
 
-  <div class="product" data-name="rice">
-    <span>Rice 1kg</span>
-    <button onclick="addToCart('Rice 1kg')">Add</button>
-  </div>
 
-  <div class="product" data-name="wheat">
-    <span>Wheat Flour 1kg</span>
-    <button onclick="addToCart('Wheat Flour 1kg')">Add</button>
-  </div>
-</section>
+                <!-- 🛒 -->
+                <a href="cart.html" class="cart-link" style="margin-right: 10px;">
+                    <div class="cart-button" disabled>
+                        <div class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                        <div class="cart-text">My Cart</div>
+                    </div>
+                </a>
 
-<section class="category">
-  <h2>Oil & Ghee</h2>
+                <a href="order.html" class="cart-link" style="margin-left: 10px;">
+                    <div class="cart-button" disabled>
+                        <div class="cart-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                        <div class="cart-text">Quick Order</div>
+                    </div>
+                </a>
 
-  <div class="product" data-name="oil">
-    <span>Mustard Oil 1L</span>
-    <button onclick="addToCart('Mustard Oil 1L')">Add</button>
-  </div>
-</section>
+            </div>
 
-<script src="js/cart.js"></script>
+            <div class="navbar-secondary">
+
+                <div class="ans">
+                    <a href="#"> All</a>
+                    <a href="#">Cooking Oil & Ghee </a>
+                    <a href="#">Spices & Masala </a>
+                    <a href="#">Sugar, Salt & Jaggery</a>
+                    <a href="#">Tea, Coffee & Beverages</a>
+                    <a href="#">Biscuits & Snacks</a>
+                    <a href="#">Cleaning & Household</a>
+                    <a href="#">Stationery & General Items</a>
+                    <!-- 
+                <a href="">New Launches</a>
+                <a href="">Ingredient</a>
+                <a href="">All Products</a>
+                <a href="">Plant Goodness</a>
+                <a href="">Store Locater</a> -->
+                </div>
+
+            </div>
+        </nav>
+
+        <section class="hero-section" style="height: 55vh;">
+            <div class="div" style="width: 100%; height: 55vh; position: absolute; background: #00000093;"></div>
+            <div class="hero-title" style="z-index: 1; text-align: center;">
+                <span class="exile-regular" style="color: #ff9900; font-size: 4em; font-weight: 900;">AUR</span>
+                <span class="exile-regular" style="color: #4caf4f; font-size: 4em; font-weight: 900;">OO </span>
+                <span style="color: #fff; font-size: 4em; font-weight: 900;"> Kae Levo Saa</span>
+            </div>
+            <div class="quick-order">
+                <a href="order.html"> <i class="fa-solid fa-cart-shopping" style="color: #000000b6;"></i> Quick Order
+                    Now</a>
+            </div>
+
+            <!-- <img src="assets\vector-bg-kirana.webp" alt="banner-img" width="100%" height="100%"> -->
+        </section>
+
+    </header>
+    <!-- 
+    <input type="text" id="searchInput" class="search-bar" placeholder="Search items..." onkeyup="searchProducts()" /> -->
+    <main>
+
+        <section class="first-category">
+            <div class="category-heading">
+                <h2>Wheat and Oil</h2>
+            </div>
+
+            <div class="category h-scroll" id="hScroll" tabindex="0">
+                <div class="product-view">
+                    <img src="https://img.freepik.com/free-vector/bread-assortment-with-careal-crops-illustration_1284-28221.jpg?t=st=1767292446~exp=1767296046~hmac=127e5f7c20ceea39c5304db5cfa4cd254686c885676550bfbd939160610b0a2b&w=1060"
+                        alt="atta">
+                    <div class="product" data-name="rice">
+                        <span>Rice 1kg</span>
+                        <button onclick="addToCart('Rice 1kg')"> Add </button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="https://img.freepik.com/free-vector/bread-assortment-with-careal-crops-illustration_1284-28221.jpg?t=st=1767292446~exp=1767296046~hmac=127e5f7c20ceea39c5304db5cfa4cd254686c885676550bfbd939160610b0a2b&w=1060"
+                        alt="atta">
+                    <div class="product" data-name="wheat">
+                        <span>Wheat Flour 1kg</span>
+                        <button onclick="addToCart('Wheat Flour 1kg')">Add</button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="https://img.freepik.com/free-vector/bread-assortment-with-careal-crops-illustration_1284-28221.jpg?t=st=1767292446~exp=1767296046~hmac=127e5f7c20ceea39c5304db5cfa4cd254686c885676550bfbd939160610b0a2b&w=1060"
+                        alt="atta">
+                    <div class="product" data-name="rice">
+                        <span>Rice 1kg</span>
+                        <button onclick="addToCart('Rice 1kg')">Add</button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="https://img.freepik.com/free-vector/bread-assortment-with-careal-crops-illustration_1284-28221.jpg?t=st=1767292446~exp=1767296046~hmac=127e5f7c20ceea39c5304db5cfa4cd254686c885676550bfbd939160610b0a2b&w=1060"
+                        alt="atta">
+                    <div class="product" data-name="wheat">
+                        <span>Wheat Flour 1kg</span>
+                        <button onclick="addToCart('Wheat Flour 1kg')">Add</button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="https://img.freepik.com/free-vector/bread-assortment-with-careal-crops-illustration_1284-28221.jpg?t=st=1767292446~exp=1767296046~hmac=127e5f7c20ceea39c5304db5cfa4cd254686c885676550bfbd939160610b0a2b&w=1060"
+                        alt="atta">
+                    <div class="product" data-name="rice">
+                        <span>Rice 1kg</span>
+                        <button onclick="addToCart('Rice 1kg')">Add</button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="https://img.freepik.com/free-vector/bread-assortment-with-careal-crops-illustration_1284-28221.jpg?t=st=1767292446~exp=1767296046~hmac=127e5f7c20ceea39c5304db5cfa4cd254686c885676550bfbd939160610b0a2b&w=1060"
+                        alt="atta">
+                    <div class="product" data-name="wheat">
+                        <span>Wheat Flour 1kg</span>
+                        <button onclick="addToCart('Wheat Flour 1kg')">Add</button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="https://img.freepik.com/free-vector/bread-assortment-with-careal-crops-illustration_1284-28221.jpg?t=st=1767292446~exp=1767296046~hmac=127e5f7c20ceea39c5304db5cfa4cd254686c885676550bfbd939160610b0a2b&w=1060"
+                        alt="atta">
+                    <div class="product" data-name="rice">
+                        <span>Rice 1kg</span>
+                        <button onclick="addToCart('Rice 1kg')">Add</button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="https://img.freepik.com/free-vector/bread-assortment-with-careal-crops-illustration_1284-28221.jpg?t=st=1767292446~exp=1767296046~hmac=127e5f7c20ceea39c5304db5cfa4cd254686c885676550bfbd939160610b0a2b&w=1060"
+                        alt="atta">
+                    <div class="product" data-name="wheat">
+                        <span>Wheat Flour 1kg</span>
+                        <button onclick="addToCart('Wheat Flour 1kg')">Add</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section class="category">
+            <h2>Oil & Ghee</h2>
+
+            <div class="product" data-name="oil">
+                <span>Mustard Oil 1L</span>
+                <button onclick="addToCart('Mustard Oil 1L')">Add</button>
+            </div>
+        </section> -->
+    </main>
+
+    <script>
+        let lastScrollY = window.scrollY;
+        const navbar = document.getElementById("navbar");
+
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.scrollY;
+
+            if (currentScroll > lastScrollY && currentScroll > 80) {
+                navbar.classList.add("hide");
+            } else {
+                navbar.classList.remove("hide");
+            }
+
+            lastScrollY = currentScroll;
+        });
+
+
+
+    </script>
+
+
+    <script src="js/cart.js"></script>
 </body>
 
 

@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+}
+
+.container {
+  max-width: 420px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.note {
+  text-align: center;
+  font-size: 14px;
+  color: #ccc;
+}
+
+input, select, textarea {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  background: #222;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.list-field {
+  min-height: 140px;
+  line-height: 1.6;
+}
+
+.hint {
+  font-size: 13px;
+  color: #aaa;
+  margin-top: 8px;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 16px;
+  background: green;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
