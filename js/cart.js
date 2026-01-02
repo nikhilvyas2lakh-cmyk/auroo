@@ -6,10 +6,16 @@ function saveCart() {
 }
 
 /* ---------- ADD FROM PRODUCT PAGE ---------- */
-function addToCart(item) {
-  cart[item] = (cart[item] || 0) + 1;
-  saveCart();
-  alert("Added to cart");
+function addToCart(name, price) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || {};
+
+  if (cart[name] && typeof cart[name] === "object") {
+    cart[name].qty += 1;
+  } else {
+    cart[name] = { qty: 1, price: price };
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
 }
 
 /* ---------- RENDER CART + PREPARE FORM ---------- */
@@ -56,3 +62,46 @@ document.addEventListener("submit", () => {
 
 /* ---------- INIT ---------- */
 document.addEventListener("DOMContentLoaded", renderCartPage);
+
+
+
+function renderCartPage() {
+  const list = document.getElementById("cartList");
+  const totalEl = document.getElementById("cartTotal");
+  const orderInput = document.getElementById("orderItems");
+
+  if (!list) return;
+
+  const cart = JSON.parse(localStorage.getItem("cart")) || {};
+  list.innerHTML = "";
+
+  let total = 0;
+  let orderText = "";
+
+  if (Object.keys(cart).length === 0) {
+    list.innerHTML = "<li>Cart is empty</li>";
+    totalEl.textContent = "0";
+    orderInput.value = "";
+    return;
+  }
+
+  for (let item in cart) {
+    const { qty, price } = cart[item];
+    const itemTotal = qty * price;
+    total += itemTotal;
+
+    const li = document.createElement("li");
+    li.innerHTML = `
+      ${item} × ${qty} — ₹${itemTotal}
+      <button type="button" onclick="removeItem('${item}')">❌</button>
+    `;
+    list.appendChild(li);
+
+    orderText += `${item} × ${qty} = ₹${itemTotal}\n`;
+  }
+
+  orderText += `\nTOTAL = ₹${total}`;
+  orderInput.value = orderText;
+  totalEl.textContent = total;
+}
+

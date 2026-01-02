@@ -1,48 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Your Cart</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<header class="header">
-  <h2>Your Order</h2>
-  <a href="index.html">← Back</a>
-</header>
+  <header class="header">
+    <h2>Your Order</h2>
+    <a href="index.html">← Back</a>
+  </header>
 
-<form action="https://api.web3forms.com/submit" method="POST" id="orderForm">
+  <form action="https://api.web3forms.com/submit" method="POST" id="orderForm">
 
-  <!-- REQUIRED -->
-  <input type="hidden" name="access_key" value="b24ee84e-9428-4116-86eb-2b2f90b5bb8b">
+    <!-- REQUIRED -->
+    <input type="hidden" name="access_key" value="b24ee84e-9428-4116-86eb-2b2f90b5bb8b">
 
-  <!-- CART ITEMS -->
-  <h3>Items</h3>
+    <!-- CART ITEMS -->
+    <h3>Items</h3>
+    <ul id="cartList" class="cart-list"></ul>
+
+    <!-- Hidden field to send cart -->
+    <input type="hidden" name="order_items" id="orderItems">
+
+    <!-- USER DETAILS -->
+    <h3>Delivery Details</h3>
+
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="tel" name="phone" placeholder="Mobile Number" required>
+
+    <select name="location" required>
+      <option value="">Select Location</option>
+      <option>Home</option>
+      <option>Road</option>
+      <option>Shop</option>
+      <option>Farm</option>
+    </select>
+
+    <textarea name="address" placeholder="Full Address" required></textarea>
+
+    <button type="submit" class="btn">Submit Order</button>
+  </form>
+
   <ul id="cartList" class="cart-list"></ul>
 
-  <!-- Hidden field to send cart -->
-  <input type="hidden" name="order_items" id="orderItems">
+  <h3>Total: ₹<span id="cartTotal">0</span></h3>
 
-  <!-- USER DETAILS -->
-  <h3>Delivery Details</h3>
-
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="tel" name="phone" placeholder="Mobile Number" required>
-
-  <select name="location" required>
-    <option value="">Select Location</option>
-    <option>Home</option>
-    <option>Road</option>
-    <option>Shop</option>
-    <option>Farm</option>
-  </select>
-
-  <textarea name="address" placeholder="Full Address" required></textarea>
-
-  <button type="submit" class="btn">Submit Order</button>
-</form>
-
-<script src="js/cart.js"></script>
+  <script src="js/cart.js"></script>
 </body>
+
 </html>

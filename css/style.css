@@ -2,6 +2,7 @@
 
 body {
   margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
   color: var(--text-color);
   background-color: var(--background-color);
@@ -45,7 +46,7 @@ a:hover {
   color: var(--primary-color);
 }
 
-h2{
+h2 {
   margin: 0;
   padding: 25px;
   color: var(--text-color);
@@ -245,6 +246,7 @@ section .quick-order a:focus {
 .h-scroll::-webkit-scrollbar {
   display: none;
 }
+
 .h-scroll {
   scrollbar-width: none;
 }
@@ -252,6 +254,12 @@ section .quick-order a:focus {
 /* ====----------==== */
 
 
+.product-price {
+  display: block;
+  font-size: 14px;
+  color: #4caf50;
+  margin: 4px 0;
+}
 
 
 /* ========================================================================= */
@@ -262,6 +270,7 @@ section .quick-order a:focus {
   overflow-x: scroll;
   gap: 15px;
 }
+
 /* 
 
 .first-category  {
@@ -289,7 +298,7 @@ section .quick-order a:focus {
 
 .product {
   display: flex;
-  padding: 15px;
+  padding: 12px;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
@@ -297,7 +306,7 @@ section .quick-order a:focus {
 
 button,
 .btn {
-  background: green;
+  background: var(--primary-color);
   color: #fff;
   border: none;
   padding: 8px 12px;
@@ -306,6 +315,57 @@ button,
   cursor: pointer;
 }
 
+/* animation for btn  */
+/* Button base */
+.product button {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s ease;
+}
+
+/* Click press effect */
+.product button:active {
+  transform: scale(0.95);
+}
+
+/* Success animation */
+.product button.added {
+  background: #4caf50;
+  color: #fff;
+  animation: pop 0.4s ease;
+}
+
+/* Checkmark text */
+.product button.added::after {
+  content: "✓ Added";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+/* Hide original text when added */
+.product button.added span {
+  visibility: hidden;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.09);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ----------------------- */
 .cart-list li {
   padding: 10px;
   list-style: none;

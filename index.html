@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Sharma Kirana Store</title>
+    <title>Auroo - Your Trust</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -59,17 +59,18 @@
 
             </div>
 
-            <div class="navbar-secondary">
+            <div class="navbar-secondary h-scroll" id="hScroll" tabindex="0 " style="overflow-x: scroll;">
 
                 <div class="ans">
-                    <a href="#"> All</a>
+                    <a href="#first-category">Tranding</a>
                     <a href="#">Cooking Oil & Ghee </a>
                     <a href="#">Spices & Masala </a>
-                    <a href="#">Sugar, Salt & Jaggery</a>
                     <a href="#">Tea, Coffee & Beverages</a>
                     <a href="#">Biscuits & Snacks</a>
                     <a href="#">Cleaning & Household</a>
                     <a href="#">Stationery & General Items</a>
+                    <a href="#">Mobile accesseries</a>
+
                     <!-- 
                 <a href="">New Launches</a>
                 <a href="">Ingredient</a>
@@ -81,12 +82,16 @@
             </div>
         </nav>
 
-        <section class="hero-section" style="height: 55vh;">
-            <div class="div" style="width: 100%; height: 55vh; position: absolute; background: #00000093;"></div>
+        <section class="hero-section" style="height: 60vh;">
+            <div class="div" style="width: 100%; height: 60vh; position: absolute; background: #00000093;"></div>
             <div class="hero-title" style="z-index: 1; text-align: center;">
                 <span class="exile-regular" style="color: #ff9900; font-size: 4em; font-weight: 900;">AUR</span>
                 <span class="exile-regular" style="color: #4caf4f; font-size: 4em; font-weight: 900;">OO </span>
-                <span style="color: #fff; font-size: 4em; font-weight: 900;"> Kae Levo Saa</span>
+                <span style="color: #fff; font-size: 4em; font-weight: 900;"> Kai Levo Saa</span>
+            </div>
+            <div>
+                <p style="font-size: 1.3em; font-weight: 500; color: #ffffff; position: relative; z-index: 3;">Anshu
+                    general store X Ayushi Mobiles</p>
             </div>
             <div class="quick-order">
                 <a href="order.html"> <i class="fa-solid fa-cart-shopping" style="color: #000000b6;"></i> Quick Order
@@ -101,84 +106,95 @@
     <input type="text" id="searchInput" class="search-bar" placeholder="Search items..." onkeyup="searchProducts()" /> -->
     <main>
 
-        <section class="first-category">
+        <section class="first-category" id="first-category">
             <div class="category-heading">
-                <h2>Wheat and Oil</h2>
+                <h2>Tranding Products</h2>
             </div>
 
             <div class="category h-scroll" id="hScroll" tabindex="0">
                 <div class="product-view">
-                    <img src="https://img.freepik.com/free-vector/bread-assortment-with-careal-crops-illustration_1284-28221.jpg?t=st=1767292446~exp=1767296046~hmac=127e5f7c20ceea39c5304db5cfa4cd254686c885676550bfbd939160610b0a2b&w=1060"
-                        alt="atta">
-                    <div class="product" data-name="rice">
-                        <span>Rice 1kg</span>
-                        <button onclick="addToCart('Rice 1kg')"> Add </button>
+                    <img src="https://static.vecteezy.com/system/resources/previews/008/924/633/non_2x/rice-package-mockup-thailand-food-products-illustration-vector.jpg"
+                        alt="rise">
+
+                    <div class="product" data-name="Rice 1kg" data-price="60">
+                        <span class="product-name">Rice 1kg</span>
+                        <span class="product-price">₹60</span>
+                        <button onclick="addToCart('Rice 1kg', 60)"><span>Add</span></button>
+                    </div>
+                </div>
+                <!-- </div> -->
+
+                <div class="product-view">
+                    <img src="https://img.freepik.com/free-vector/matcha-tea-pack-icon-isolated_24640-134464.jpg?t=st=1767359383~exp=1767362983~hmac=75582e55918b95aaf40a0567e89a4ec48f5c2272e665e14b5e01076495b5702e&w=1060"
+                        alt="tea">
+
+                    <div class="product" data-name="mateshwari 250g" data-price="60">
+                        <span class="product-name">mateshwari 250g</span>
+                        <span class="product-price">₹60</span>
+                        <button onclick="addToCart('mateshwari 250g', 60)"><span>Add</span></button>
                     </div>
                 </div>
 
                 <div class="product-view">
-                    <img src="https://img.freepik.com/free-vector/bread-assortment-with-careal-crops-illustration_1284-28221.jpg?t=st=1767292446~exp=1767296046~hmac=127e5f7c20ceea39c5304db5cfa4cd254686c885676550bfbd939160610b0a2b&w=1060"
-                        alt="atta">
-                    <div class="product" data-name="wheat">
-                        <span>Wheat Flour 1kg</span>
-                        <button onclick="addToCart('Wheat Flour 1kg')">Add</button>
+                    <img src="https://www.antmascot.com/_next/image?url=https%3A%2F%2Fantmascot.s3.ap-south-1.amazonaws.com%2Fimages%2Fproducts%2F412439.jpg&w=640&q=85"
+                        alt="coffee">
+                    <div class="product" data-name="sugar 1kg" data-price="45">
+                        <span class="product-name">sugar 1kg</span>
+                        <span class="product-price">₹45</span>
+                        <button onclick="addToCart('sugar 1kg', 45)"><span>Add</span></button>
                     </div>
                 </div>
 
                 <div class="product-view">
-                    <img src="https://img.freepik.com/free-vector/bread-assortment-with-careal-crops-illustration_1284-28221.jpg?t=st=1767292446~exp=1767296046~hmac=127e5f7c20ceea39c5304db5cfa4cd254686c885676550bfbd939160610b0a2b&w=1060"
-                        alt="atta">
-                    <div class="product" data-name="rice">
-                        <span>Rice 1kg</span>
-                        <button onclick="addToCart('Rice 1kg')">Add</button>
+                    <img src="https://img.freepik.com/premium-vector/vector-design-salt-icon-style_822882-404394.jpg?semt=ais_hybrid&w=740&q=80"
+                        alt="salt">
+                    <div class="product" data-name="salt 1kg" data-price="20">
+                        <span class="product-name">salt 1kg</span>
+                        <span class="product-price">₹20</span>
+                        <button onclick="addToCart('salt 1kg', 20)"><span>Add</span></button>
                     </div>
                 </div>
 
                 <div class="product-view">
-                    <img src="https://img.freepik.com/free-vector/bread-assortment-with-careal-crops-illustration_1284-28221.jpg?t=st=1767292446~exp=1767296046~hmac=127e5f7c20ceea39c5304db5cfa4cd254686c885676550bfbd939160610b0a2b&w=1060"
-                        alt="atta">
-                    <div class="product" data-name="wheat">
-                        <span>Wheat Flour 1kg</span>
-                        <button onclick="addToCart('Wheat Flour 1kg')">Add</button>
+                    <img src="https://img.freepik.com/free-vector/chili-pepper-powder-ingredient-illustration-isolated_24911-114464.jpg?t=st=1767360564~exp=1767364164~hmac=57706ef7495b7bc29f574ee963ad974d62692949074e3fc2968df48e13603110&w=1060"
+                        alt="mirchi">
+                    <div class="product" data-name="mirch 200g" data-price="60">
+                        <span class="product-name">mirch 200g</span>
+                        <span class="product-price">₹60</span>
+                        <button onclick="addToCart('mirch 200g', 60)"><span>Add</span></button>
                     </div>
                 </div>
 
                 <div class="product-view">
-                    <img src="https://img.freepik.com/free-vector/bread-assortment-with-careal-crops-illustration_1284-28221.jpg?t=st=1767292446~exp=1767296046~hmac=127e5f7c20ceea39c5304db5cfa4cd254686c885676550bfbd939160610b0a2b&w=1060"
-                        alt="atta">
-                    <div class="product" data-name="rice">
-                        <span>Rice 1kg</span>
-                        <button onclick="addToCart('Rice 1kg')">Add</button>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB0qDyI0yGz-8PVKtH91YCPnDLbBwfhlOGxA&s"
+                        alt="haldi">
+                    <div class="product" data-name="haldi 200g" data-price="50">
+                        <span class="product-name">haldi 200g</span>
+                        <span class="product-price">₹50</span>
+                        <button onclick="addToCart('haldi 200g', 50)"><span>Add</span></button>
                     </div>
                 </div>
 
                 <div class="product-view">
-                    <img src="https://img.freepik.com/free-vector/bread-assortment-with-careal-crops-illustration_1284-28221.jpg?t=st=1767292446~exp=1767296046~hmac=127e5f7c20ceea39c5304db5cfa4cd254686c885676550bfbd939160610b0a2b&w=1060"
-                        alt="atta">
-                    <div class="product" data-name="wheat">
-                        <span>Wheat Flour 1kg</span>
-                        <button onclick="addToCart('Wheat Flour 1kg')">Add</button>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmQVOaJAGT3j938egwuwbfsBbg4ZFdpwCe_Q&s"
+                        alt="dhaniya">
+                    <div class="product" data-name="dhaniya 200g" data-price="50">
+                        <span class="product-name">dhaniya 200g</span>
+                        <span class="product-price">₹50</span>
+                        <button onclick="addToCart('dhaniya 200g', 50)"><span>Add</span></button>
                     </div>
                 </div>
 
                 <div class="product-view">
-                    <img src="https://img.freepik.com/free-vector/bread-assortment-with-careal-crops-illustration_1284-28221.jpg?t=st=1767292446~exp=1767296046~hmac=127e5f7c20ceea39c5304db5cfa4cd254686c885676550bfbd939160610b0a2b&w=1060"
-                        alt="atta">
-                    <div class="product" data-name="rice">
-                        <span>Rice 1kg</span>
-                        <button onclick="addToCart('Rice 1kg')">Add</button>
+                    <img src="https://img.freepik.com/free-photo/png-sunflower-oil-plastic-bottles-isolated-white-background_185193-164228.jpg?t=st=1767361358~exp=1767364958~hmac=30e18d385eb0aa74981af5a8d15829c5d4e94759eadbb03146a9940d7dfc2bab&w=1060"
+                        alt="oil">
+                    <div class="product" data-name="oil 1ltr" data-price="140">
+                        <span class="product-name">oil 1ltr</span>
+                        <span class="product-price">₹140</span>
+                        <button onclick="addToCart('oil 1ltr', 140)"><span>Add</span></button>
                     </div>
-                </div>
 
-                <div class="product-view">
-                    <img src="https://img.freepik.com/free-vector/bread-assortment-with-careal-crops-illustration_1284-28221.jpg?t=st=1767292446~exp=1767296046~hmac=127e5f7c20ceea39c5304db5cfa4cd254686c885676550bfbd939160610b0a2b&w=1060"
-                        alt="atta">
-                    <div class="product" data-name="wheat">
-                        <span>Wheat Flour 1kg</span>
-                        <button onclick="addToCart('Wheat Flour 1kg')">Add</button>
-                    </div>
                 </div>
-            </div>
         </section>
 
         <!-- <section class="category">
@@ -208,6 +224,15 @@
         });
 
 
+        function handleAdd(btn, name, price) {
+            addToCart(name, price);
+
+            btn.classList.add("added");
+
+            setTimeout(() => {
+                btn.classList.remove("added");
+            }, 900);
+        }
 
     </script>
 
