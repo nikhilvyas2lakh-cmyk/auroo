@@ -8,18 +8,41 @@
 <body>
 
 <header class="header">
-  <h1>Your Cart</h1>
+  <h2>Your Order</h2>
   <a href="index.html">← Back</a>
 </header>
 
-<ul id="cartList" class="cart-list"></ul>
+<form action="https://api.web3forms.com/submit" method="POST" id="orderForm">
 
-<a href="order.html" class="btn">Proceed to Order</a>
+  <!-- REQUIRED -->
+  <input type="hidden" name="access_key" value="b24ee84e-9428-4116-86eb-2b2f90b5bb8b">
+
+  <!-- CART ITEMS -->
+  <h3>Items</h3>
+  <ul id="cartList" class="cart-list"></ul>
+
+  <!-- Hidden field to send cart -->
+  <input type="hidden" name="order_items" id="orderItems">
+
+  <!-- USER DETAILS -->
+  <h3>Delivery Details</h3>
+
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="tel" name="phone" placeholder="Mobile Number" required>
+
+  <select name="location" required>
+    <option value="">Select Location</option>
+    <option>Home</option>
+    <option>Road</option>
+    <option>Shop</option>
+    <option>Farm</option>
+  </select>
+
+  <textarea name="address" placeholder="Full Address" required></textarea>
+
+  <button type="submit" class="btn">Submit Order</button>
+</form>
 
 <script src="js/cart.js"></script>
-<script>
-  renderCartPage();
-</script>
-
 </body>
 </html>

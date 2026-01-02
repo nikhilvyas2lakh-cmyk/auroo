@@ -1,35 +1,58 @@
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+/* ---------- CART STORAGE ---------- */
+let cart = JSON.parse(localStorage.getItem("cart")) || {};
 
-function addToCart(item) {
-  cart.push(item);
+function saveCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+/* ---------- ADD FROM PRODUCT PAGE ---------- */
+function addToCart(item) {
+  cart[item] = (cart[item] || 0) + 1;
+  saveCart();
   alert("Added to cart");
 }
 
+/* ---------- RENDER CART + PREPARE FORM ---------- */
 function renderCartPage() {
   const list = document.getElementById("cartList");
-  list.innerHTML = "";
+  const orderInput = document.getElementById("orderItems");
 
-  cart.forEach((item, index) => {
+  if (!list || !orderInput) return;
+
+  list.innerHTML = "";
+  let orderText = "";
+
+  if (Object.keys(cart).length === 0) {
+    list.innerHTML = "<li>Cart is empty</li>";
+    orderInput.value = "";
+    return;
+  }
+
+  for (let item in cart) {
     const li = document.createElement("li");
-    li.innerHTML = `${item} <button onclick="removeItem(${index})">❌</button>`;
+    li.innerHTML = `
+      ${item} × ${cart[item]}
+      <button type="button" onclick="removeItem('${item}')">❌</button>
+    `;
     list.appendChild(li);
-  });
+
+    orderText += `${item} × ${cart[item]}\n`;
+  }
+
+  orderInput.value = orderText;
 }
 
-function removeItem(index) {
-  cart.splice(index, 1);
-  localStorage.setItem("cart", JSON.stringify(cart));
+/* ---------- REMOVE ITEM ---------- */
+function removeItem(item) {
+  delete cart[item];
+  saveCart();
   renderCartPage();
 }
 
-function prepareOrder() {
-  document.getElementById("orderItems").value = cart.join(", ");
-}
+/* ---------- CLEAR CART AFTER SUBMIT ---------- */
+document.addEventListener("submit", () => {
+  localStorage.removeItem("cart");
+});
 
-function searchProducts() {
-  const input = document.getElementById("searchInput").value.toLowerCase();
-  document.querySelectorAll(".product").forEach(p => {
-    p.style.display = p.dataset.name.includes(input) ? "flex" : "none";
-  });
-}
+/* ---------- INIT ---------- */
+document.addEventListener("DOMContentLoaded", renderCartPage);
