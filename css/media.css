@@ -1,0 +1,148 @@
+@media (max-width: 600px) {
+    .header {
+        padding: 10px;
+    }
+
+    .logo {
+        padding: 0 2px;
+        font-size: 11px;
+    }
+
+    .nav-bar .navbar-primery {
+        padding: 10px;
+        height: 50px;
+        justify-content: space-evenly;
+    }
+
+    .navbar-secondary {
+        
+
+    }
+
+    .search-box {
+        width: 50%;
+        display: flex;
+        /* flex-direction: column; */
+        /* gap: 8px; */
+        /* align-items: stretch; */
+    }
+
+    .search-bar {
+        width: 20%;
+        font-size: 13px;
+        padding: 6px;
+    }
+
+    .search-btn {
+        width: 10%;
+        padding: 6px;
+        /* border-radius: 6px; */
+    }
+
+    .cart-button {
+        padding: 0px;
+
+    }
+
+    .cart-icon {
+        width: 22px;
+        height: 22px;
+        padding: 3px;
+        font-size: 14px;
+    }
+
+    .cart-text {
+        display: none;
+    }
+
+    .hero-section {
+        margin-top: 65px;
+    }
+
+    h2 {
+        padding: 16px 18px;
+        font-size: 20px;
+    }
+
+    .category {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .product-view {
+        min-width: 200px;
+        height: 290px;
+        margin: 1px;
+        border-radius: 12px;
+    }
+
+    .product-view img {
+        border-radius: 15px 15px 0 0;
+        width: 100%;
+        height: 175px;
+        object-fit: cover;
+    }
+
+    .product {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    button,
+    .btn {
+        padding: 10px 12px;
+        font-size: 15px;
+    }
+
+    input,
+    textarea,
+    select {
+        font-size: 15px;
+    }
+
+    .order-form {
+        padding: 12px;
+    }
+
+    .h-scroll {
+        padding: 8px;
+        gap: 8px;
+    }
+}
+/* 
+@media (max-width: 380px) {
+    .hero-section {
+        margin-top: 95px;
+        height: 28vh;
+    }
+
+    .navbar-primery {
+        padding: 6px;
+
+    }
+
+    .logo img {
+        max-width: 130px;
+    }
+
+    .product-view {
+        min-width: 120px;
+        height: 200px;
+    }
+
+    h2 {
+        font-size: 18px;
+        padding: 12px;
+    }
+
+    .search-bar {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .cart-text {
+        font-size: 13px;
+    }
+} */

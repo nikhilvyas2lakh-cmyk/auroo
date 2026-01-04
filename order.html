@@ -3,64 +3,117 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Kirana Quick Order</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auroo - Search Results</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="order.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        form {
+            width: 80vw;
+            margin: auto;
+        }
+    </style>
 </head>
 
 <body>
 
-    <div class="container">
+    <header class="header">
+        <nav class="nav-bar">
+            <div class="navbar-primery">
+                <!-- <img src="imgs\mamaearth-logo.avif" alt="logo-me" width="140px" height="31.5px"> -->
+                <a href="index.html">
+                    <div class="logo exile-regular">
+                        <span style="color: #ff9900; font-size: 2em; font-weight: 900;">AUR</span>
+                        <span style="color: #4CAF50; font-size: 2em; font-weight: 900;">OO</span>
+                    </div>
+                </a>
 
-        <h1>Quick Grocery Order</h1>
-        <p class="note">Write your items one per line</p>
+                <form action="search.html" method="GET" class="sec search-box">
+                    <!-- <input type="text" name="q" class="search-bar" placeholder="Search items..." required />
+          <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i>
+          </button> -->
+                </form>
 
-        <form action="https://api.web3forms.com/submit" method="POST">
 
-            <!-- Web3Forms Key -->
-            <input type="hidden" name="access_key" value="6b2eef07-ceac-4288-9072-0786d109d86c">
 
-            <!-- Customer Details -->
-            <input type="text" name="Name" placeholder="Your Name" required>
-            <input type="tel" name="Mobile Number" placeholder="Mobile Number" required>
 
-            <!-- Location -->
-            <select name="Location Type" required>
-                <option value="">Nearby-location</option>
-                <option>main bus-stand</option>
-                <option>Near parshuram chouk</option>
-                <option>Nala ki dhani</option>
-                <option>Baajar</option>
-                <option>Rohida</option>
-                <option>Gurjaro ki dhani</option>
-                <option>other</option>
+                <!-- 🛒 -->
+                <a href="cart.html" class="cart-link">
+                    <div class="cart-button" disabled>
+                        <div class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                        <div class="cart-text">My Cart</div>
+                    </div>
+                </a>
 
-            </select>
-            <!-- location actual-->
-            <input type="search" name="Location" placeholder="Full Address / Landmark" required>
+                <a href="order.html" class="cart-link">
+                    <div class="cart-button" disabled>
+                        <div class="cart-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                        <div class="cart-text">Quick Order</div>
+                    </div>
+                </a>
 
-            <!-- <textarea  name="Address" placeholder="Full Address / Landmark" required></textarea> -->
+            </div>
 
-            <!-- SINGLE TODO-LIST FIELD -->
-            <h2>Your Grocery List</h2>
+        </nav>
+    </header>
+    <div class="space" style="margin-top: 80px;"></div>
 
-            <textarea name="Grocery List" class="list-field" placeholder="Example:
+
+    <section class="container">
+        <div class="heading-form">
+            <h2>Quick Grocery Order</h2>
+        </div>
+        <!-- <p class="note">Write your items one per line</p> -->
+        <div class="quick-form">
+            <form action="https://api.web3forms.com/submit" method="POST">
+
+                <!-- Web3Forms Key -->
+                <input type="hidden" name="access_key" value="6b2eef07-ceac-4288-9072-0786d109d86c">
+
+                <!-- Customer Details -->
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="tel" name="Mobile Number" placeholder="Mobile Number" required>
+
+                <!-- Location -->
+                <select name="Location Type" required>
+                    <option value="">Nearby-location</option>
+                    <option>main bus-stand</option>
+                    <option>Near parshuram chouk</option>
+                    <option>Nala ki dhani</option>
+                    <option>Baajar</option>
+                    <option>Rohida</option>
+                    <option>Gurjaro ki dhani</option>
+                    <option>other</option>
+
+                </select>
+                <!-- location actual-->
+                <input type="search" name="Location" placeholder="Full Address / Landmark" required>
+
+                <!-- <textarea  name="Address" placeholder="Full Address / Landmark" required></textarea> -->
+
+                <!-- SINGLE TODO-LIST FIELD -->
+                <h2>Your Grocery List</h2>
+
+                <textarea name="Grocery List" class="list-field" placeholder="Example:
 Rice 2 kg
 Sugar 1 kg
 Oil 1 litre
 Biscuit 2 packet" required></textarea>
 
-            <p class="hint">
-                • Write one item per line<br>
-                • Any brand is okay<br>
-                • We will call to confirm
-                • Bill will be sent via WhatsApp
-            </p>
+                <p class="hint">
+                    • Write one item per line<br>
+                    • Any brand is okay<br>
+                    • We will call to confirm
+                    • Only cash on delivery
+                </p>
 
-            <button type="submit">Send Order</button>
+                <button type="submit">Send Order</button>
 
-        </form>
-
-    </div>
+            </form>
+        </div>
+    </section>
 
 </body>
 

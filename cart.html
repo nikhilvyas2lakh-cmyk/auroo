@@ -3,16 +3,80 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Your Cart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auroo - Search Results</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    form {
+      width: 80vw;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 10px;
+    }
+
+
+    input,
+    select,
+    textarea {
+      width: 85%;
+      margin-top: 13px;
+      padding: 16px;
+      background: #222;
+      color: #fff;
+      border: 1px solid #333;
+      border-radius: 14px;
+      font-size: 18px;
+    }
+  </style>
 </head>
 
 <body>
 
   <header class="header">
-    <h2>Your Order</h2>
-    <a href="index.html">← Back</a>
+    <nav class="nav-bar">
+      <div class="navbar-primery">
+        <!-- <img src="imgs\mamaearth-logo.avif" alt="logo-me" width="140px" height="31.5px"> -->
+        <a href="index.html">
+          <div class="logo exile-regular">
+            <span style="color: #ff9900; font-size: 2em; font-weight: 900;">AUR</span>
+            <span style="color: #4CAF50; font-size: 2em; font-weight: 900;">OO</span>
+          </div>
+        </a>
+
+        <form action="search.html" method="GET" class="sec search-box">
+          <!-- <input type="text" name="q" class="search-bar" placeholder="Search items..." required />
+          <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i>
+          </button> -->
+        </form>
+
+
+
+
+        <!-- 🛒 -->
+        <a href="cart.html" class="cart-link">
+          <div class="cart-button" disabled>
+            <div class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+            <div class="cart-text">My Cart</div>
+          </div>
+        </a>
+
+        <a href="order.html" class="cart-link">
+          <div class="cart-button" disabled>
+            <div class="cart-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+            <div class="cart-text">Quick Order</div>
+          </div>
+        </a>
+
+      </div>
+
+    </nav>
   </header>
+  <div class="space" style="margin-top: 80px;"></div>
+
 
   <form action="https://api.web3forms.com/submit" method="POST" id="orderForm">
 
@@ -23,31 +87,40 @@
     <h3>Items</h3>
     <ul id="cartList" class="cart-list"></ul>
 
+    <h3>Total: ₹<span id="cartTotal">0</span></h3>
+
+
     <!-- Hidden field to send cart -->
     <input type="hidden" name="order_items" id="orderItems">
 
     <!-- USER DETAILS -->
     <h3>Delivery Details</h3>
+    <input type="text" name="Name" placeholder="Your Name" required>
+    <input type="tel" name="Mobile Number" placeholder="Mobile Number" required>
 
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="tel" name="phone" placeholder="Mobile Number" required>
+    <!-- Location -->
+    <select name="Location Type" required>
+      <option value="">Nearby-location</option>
+      <option>main bus-stand</option>
+      <option>Near parshuram chouk</option>
+      <option>Nala ki dhani</option>
+      <option>Baajar</option>
+      <option>Rohida</option>
+      <option>Gurjaro ki dhani</option>
+      <option>other</option>
 
-    <select name="location" required>
-      <option value="">Select Location</option>
-      <option>Home</option>
-      <option>Road</option>
-      <option>Shop</option>
-      <option>Farm</option>
     </select>
+    <!-- location actual-->
+    <input type="search" name="Location" placeholder="Full Address / Landmark" required>
 
-    <textarea name="address" placeholder="Full Address" required></textarea>
+
+    <textarea name="describe" placeholder="Write the Things you don't get on our site" required></textarea>
 
     <button type="submit" class="btn">Submit Order</button>
   </form>
 
   <ul id="cartList" class="cart-list"></ul>
 
-  <h3>Total: ₹<span id="cartTotal">0</span></h3>
 
   <script src="js/cart.js"></script>
 </body>

@@ -3,8 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auroo - Your Trust</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -12,45 +14,36 @@
 
 <body>
 
-    <!-- <header class="header">
-        <h1>Sharma Kirana Store</h1>
-        <a href="cart.html" class="cart-link">🛒 Cart</a>
-    </header> -->
     <Header>
         <nav class="nav-bar" id="navbar">
             <div class="navbar-primery">
-                <!-- <img src="imgs\mamaearth-logo.avif" alt="logo-me" width="140px" height="31.5px"> -->
+
                 <a href="index.html">
                     <div class="logo exile-regular">
                         <span style="color: #ff9900; font-size: 2em; font-weight: 900;">AUR</span>
                         <span style="color: #4CAF50; font-size: 2em; font-weight: 900;">OO</span>
                     </div>
                 </a>
-                <!--
-                <div class="sec search-box">
-                    <input type="text" id="searchInput" class="search-bar" placeholder="Search items..."
-                        onkeyup="searchProducts()" 
-                       
-                    <button class="search-btn" onclick="searchProducts()">Search</button> 
-                </div>/> 
-                     -->
-                <form action="search.html" method="GET" class="sec search-box">
-                    <input type="text" name="q" class="search-bar" placeholder="Search items..." required />
-                    <button type="submit" class="search-btn">Search</button>
-                </form>
 
+                <a href="search.html" style="width: 50%;">
+                    <form action="search.html" method="GET" class="sec search-box" style="width: 100%;">
+                        <input type="text" name="q" class="search-bar" placeholder="Search items..." required />
+                        <div class="search-btn"><i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                    </form>
+                </a>
 
 
 
                 <!-- 🛒 -->
-                <a href="cart.html" class="cart-link" style="margin-right: 10px;">
+                <a href="cart.html" class="cart-link">
                     <div class="cart-button" disabled>
                         <div class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></div>
                         <div class="cart-text">My Cart</div>
                     </div>
                 </a>
 
-                <a href="order.html" class="cart-link" style="margin-left: 10px;">
+                <a href="order.html" class="cart-link">
                     <div class="cart-button" disabled>
                         <div class="cart-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
                         <div class="cart-text">Quick Order</div>
@@ -61,33 +54,28 @@
 
             <div class="navbar-secondary h-scroll" id="hScroll" tabindex="0 " style="overflow-x: scroll;">
 
-                <div class="ans">
-                    <a href="#first-category">Tranding</a>
-                    <a href="#">Cooking Oil & Ghee </a>
-                    <a href="#">Spices & Masala </a>
-                    <a href="#">Tea, Coffee & Beverages</a>
-                    <a href="#">Biscuits & Snacks</a>
-                    <a href="#">Cleaning & Household</a>
-                    <a href="#">Stationery & General Items</a>
-                    <a href="#">Mobile accesseries</a>
+                <a href="#first-category">Tranding</a>
+                <a href="#fist-one">Grains & Careals</a>
+                <a href="#second-one">Pulses & Legumes</a>
+                <a href="#second-category">Spices & Masala </a>
+                <a href="#third-category">Tea, Coffee & Beverages</a>
+                <a href="#fourth-category">Biscuits & Snacks</a>
+                <a href="#fifth-category">Cooking Oil & Ghee </a>
+                <a href="#sixth-category">Cleaning & Household</a>
+                <a href="#seventh-category">Stationery & General Items</a>
+                <a href="#eighth-category">Mobile accesseries</a>
 
-                    <!-- 
-                <a href="">New Launches</a>
-                <a href="">Ingredient</a>
-                <a href="">All Products</a>
-                <a href="">Plant Goodness</a>
-                <a href="">Store Locater</a> -->
-                </div>
 
             </div>
         </nav>
 
         <section class="hero-section" style="height: 60vh;">
-            <div class="div" style="width: 100%; height: 60vh; position: absolute; background: #00000093;"></div>
+            <div class="div-blur"></div>
             <div class="hero-title" style="z-index: 1; text-align: center;">
                 <span class="exile-regular" style="color: #ff9900; font-size: 4em; font-weight: 900;">AUR</span>
                 <span class="exile-regular" style="color: #4caf4f; font-size: 4em; font-weight: 900;">OO </span>
-                <span style="color: #fff; font-size: 4em; font-weight: 900;"> Kai Levo Saa</span>
+                <span style="color: #fff; font-size: 4em; font-weight: 900;"> Kai Levo
+                    Saa</span>
             </div>
             <div>
                 <p style="font-size: 1.3em; font-weight: 500; color: #ffffff; position: relative; z-index: 3;">Anshu
@@ -116,6 +104,7 @@
                     <img src="https://static.vecteezy.com/system/resources/previews/008/924/633/non_2x/rice-package-mockup-thailand-food-products-illustration-vector.jpg"
                         alt="rise">
 
+
                     <div class="product" data-name="Rice 1kg" data-price="60">
                         <span class="product-name">Rice 1kg</span>
                         <span class="product-price">₹60</span>
@@ -125,13 +114,261 @@
                 <!-- </div> -->
 
                 <div class="product-view">
-                    <img src="https://img.freepik.com/free-vector/matcha-tea-pack-icon-isolated_24640-134464.jpg?t=st=1767359383~exp=1767362983~hmac=75582e55918b95aaf40a0567e89a4ec48f5c2272e665e14b5e01076495b5702e&w=1060"
-                        alt="tea">
+                    <img src="images\IMG-20260103-WA0004.webp" alt="chili">
+
+                    <div class="product" data-name="mirch 200g" data-price="60">
+                        <span class="product-name">mirch 200g</span>
+                        <span class="product-price">₹60</span>
+                        <button onclick="addToCart('mirch 200g', 60)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="images\IMG-20260103-WA0005.webp" alt="haldi">
+
+                    <div class="product" data-name="haldi 200g" data-price="50">
+                        <span class="product-name">haldi 200g</span>
+                        <span class="product-price">₹50</span>
+                        <button onclick="addToCart('haldi 200g', 50)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="images\IMG-20260103-WA0008.webp" alt="dhaniya">
+                    <div class="product" data-name="dhaniya 200g" data-price="50">
+                        <span class="product-name">dhaniya 200g</span>
+                        <span class="product-price">₹50</span>
+                        <button onclick="addToCart('dhaniya 200g', 50)"><span>Add</span></button>
+                    </div>
+                </div>
+
+
+                <div class="product-view">
+                    <img src="https://www.antmascot.com/_next/image?url=https%3A%2F%2Fantmascot.s3.ap-south-1.amazonaws.com%2Fimages%2Fproducts%2F412439.jpg&w=640&q=85"
+                        alt="coffee">
+                    <div class="product" data-name="sugar 1kg" data-price="45">
+                        <span class="product-name">sugar 1kg</span>
+                        <span class="product-price">₹45</span>
+                        <button onclick="addToCart('sugar 1kg', 45)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="images-second\IMG-20260103-WA0014.webp" alt="salt">
+
+                    <div class="product" data-name="salt 1kg" data-price="20">
+                        <span class="product-name">salt 1kg</span>
+                        <span class="product-price">₹20</span>
+                        <button onclick="addToCart('salt 1kg', 20)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="images-second\IMG-20260104-WA0004.webp" alt="tea">
 
                     <div class="product" data-name="mateshwari 250g" data-price="60">
                         <span class="product-name">mateshwari 250g</span>
                         <span class="product-price">₹60</span>
                         <button onclick="addToCart('mateshwari 250g', 60)"><span>Add</span></button>
+                    </div>
+                </div>
+
+
+                <div class="product-view">
+                    <img src="images-second\1767520789784.webp" alt="krishna">
+                    <div class="product" data-name="krishna 1ltr" data-price="140">
+                        <span class="product-name">krishna 1ltr</span>
+                        <span class="product-price">₹140</span>
+                        <button onclick="addToCart('krishna 1ltr', 140)"><span>Add</span></button>
+                    </div>
+
+                </div>
+        </section>
+
+        <section id="first-one">
+            <div class="category-heading">
+                <h2>Grains & Careals</h2>
+            </div>
+
+            <div class="category h-scroll" id="hScroll" tabindex="0">
+                <div class="product-view">
+                    <img src="images-second\IMG-20260104-WA0009.webp" alt="rice">
+
+                    <div class="product" data-name="Rice 1kg" data-price="60">
+                        <span class="product-name">Rice 1kg</span>
+                        <span class="product-price">₹60</span>
+                        <button onclick="addToCart('Rice 1kg', 60)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="images\IMG-20260103-WA0003.webp" alt="daliya">
+
+                    <div class="product" data-name="daliya 1/2kg" data-price="30">
+                        <span class="product-name">daliya 1/2kg</span>
+                        <span class="product-price">₹30</span>
+                        <button onclick="addToCart('daliya 1/2kg', 30)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="images\IMG-20260103-WA0001.webp" alt="suji">
+
+                    <div class="product" data-name="suji 1/2kg" data-price="30">
+                        <span class="product-name">suji 1/2kg</span>
+                        <span class="product-price">₹30</span>
+                        <button onclick="addToCart('suji 1/2kg', 30)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="images\IMG-20260103-WA0012.webp" alt="poha">
+
+                    <div class="product" data-name="poha 1kg" data-price="50">
+                        <span class="product-name">poha 1kg</span>
+                        <span class="product-price">₹50</span>
+                        <button onclick="addToCart('poha 1kg', 50)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="images-second\1767521338668.webp" alt="besan">
+
+                    <div class="product" data-name="besan 1/2kg" data-price="50">
+                        <span class="product-name">besan 1/2kg</span>
+                        <span class="product-price">₹50</span>
+                        <button onclick="addToCart('besan 1/2kg', 50)"><span>Add</span></button>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section id="second-one">
+            <div class="category-heading">
+                <h2>Pulses & Legumes</h2>
+            </div>
+
+            <div class="category h-scroll" id="hScroll" tabindex="0">
+                <div class="product-view">
+                    <img src="https://media.istockphoto.com/id/1324180630/photo/macro-close-up-of-organic-yellow-gram-or-split-yellow-moong-dal-inside-a-ceramic-white-soup.jpg?s=612x612&w=0&k=20&c=x9Exlm-s5rJD7ZaoiGiAT8kC9-8UxXCZclcFopv91T4="
+                        alt="mogar">
+
+                    <div class="product" data-name="mogar 1kg" data-price="120">
+                        <span class="product-name">mogar 1kg</span>
+                        <span class="product-price">₹120</span>
+                        <button onclick="addToCart('mogar 1kg', 120)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="https://img.freepik.com/free-photo/top-view-raw-red-lentils-wooden-bowl-purple-rustic-background_141793-7123.jpg?uid=R228101545&ga=GA1.1.1355620429.1761492942&semt=ais_hybrid&w=740&q=80"
+                        alt="masoor">
+
+                    <div class="product" data-name="masoor 1kg" data-price="120">
+                        <span class="product-name">masoor 1kg</span>
+                        <span class="product-price">₹120</span>
+                        <button onclick="addToCart('masoor 1kg', 120)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="https://img.freepik.com/free-photo/roast-nut_1339-2586.jpg?uid=R228101545&ga=GA1.1.1355620429.1761492942&semt=ais_hybrid&w=740&q=80"
+                        alt="soyabean">
+
+                    <div class="product" data-name="Soya chunks" data-price="10">
+                        <span class="product-name">Soya chunks</span>
+                        <span class="product-price">₹10</span>
+                        <button onclick="addToCart('Soya chunks', 10)"><span>Add</span></button>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section class="second-category" id="second-category">
+            <div class="category-heading">
+                <h2>Spices & Masala</h2>
+            </div>
+
+            <div class="category h-scroll" id="hScroll" tabindex="0">
+                <div class="product-view">
+                    <img src="images\IMG-20260103-WA0004.webp" alt="chili">
+
+                    <div class="product" data-name="mirch 200g" data-price="60">
+                        <span class="product-name">mirch 200g</span>
+                        <span class="product-price">₹60</span>
+                        <button onclick="addToCart('mirch 200g', 60)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="images\IMG-20260103-WA0005.webp" alt="haldi">
+
+                    <div class="product" data-name="haldi 200g" data-price="50">
+                        <span class="product-name">haldi 200g</span>
+                        <span class="product-price">₹50</span>
+                        <button onclick="addToCart('haldi 200g', 50)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="images\IMG-20260103-WA0008.webp" alt="dhaniya">
+                    <div class="product" data-name="dhaniya 200g" data-price="50">
+                        <span class="product-name">dhaniya 200g</span>
+                        <span class="product-price">₹50</span>
+                        <button onclick="addToCart('dhaniya 200g', 50)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="images-second\IMG-20260104-WA0003.webp" alt="masala">
+                    <div class="product" data-name="garam masala" data-price="5">
+                        <span class="product-name">garam masala</span>
+                        <span class="product-price">₹5</span>
+                        <button onclick="addToCart('garam masala', 5)"><span>Add</span></button>
+                    </div>
+                </div>
+
+
+                <div class="product-view">
+                    <img src="images\IMG-20260103-WA0000.webp" alt="masala">
+                    <div class="product" data-name="masala 15g" data-price="10">
+                        <span class="product-name">masala 15g</span>
+                        <span class="product-price">₹10</span>
+                        <button onclick="addToCart('masala 15g', 10)"><span>Add</span></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="third-category" id="third-category">
+            <div class="category-heading">
+                <h2>Tea, Coffee & Beverages</h2>
+            </div>
+
+            <div class="category h-scroll" id="hScroll" tabindex="0">
+
+                <div class="product-view">
+                    <img src="images-second\IMG-20260104-WA0004.webp" alt="mateshwari">
+
+                    <div class="product" data-name="mateshwari 250g" data-price="60">
+                        <span class="product-name">mateshwari 250g</span>
+                        <span class="product-price">₹60</span>
+                        <button onclick="addToCart('mateshwari 250g', 60)"><span>Add</span></button>
+                    </div>
+                </div>
+
+
+                <div class="product-view">
+                    <img src="images\IMG-20260103-WA0010.webp" alt="coffee">
+
+                    <div class="product" data-name="coffee " data-price="10">
+                        <span class="product-name">coffee </span>
+                        <span class="product-price">₹10</span>
+                        <button onclick="addToCart('coffee ', 10)"><span>Add</span></button>
                     </div>
                 </div>
 
@@ -146,65 +383,323 @@
                 </div>
 
                 <div class="product-view">
-                    <img src="https://img.freepik.com/premium-vector/vector-design-salt-icon-style_822882-404394.jpg?semt=ais_hybrid&w=740&q=80"
-                        alt="salt">
-                    <div class="product" data-name="salt 1kg" data-price="20">
-                        <span class="product-name">salt 1kg</span>
-                        <span class="product-price">₹20</span>
-                        <button onclick="addToCart('salt 1kg', 20)"><span>Add</span></button>
+                    <img src="https://img.freepik.com/free-photo/still-life-xilitol-sweetener_23-2151102182.jpg?t=st=1767518836~exp=1767522436~hmac=ae3daf39a3b4a59cf19b4ddf34a4321894f39eb6095c0d66a441b50c37fea85f&w=1060"
+                        alt="desi sakkar">
+
+                    <div class="product" data-name="Bura Sakkar 1kg" data-price="55">
+                        <span class="product-name">Bura Sakkar</span>
+                        <span class="product-price">₹55</span>
+                        <button onclick="addToCart('Bura Sakkar 1kg', 55)"><span>Add</span></button>
                     </div>
                 </div>
+            </div>
 
-                <div class="product-view">
-                    <img src="https://img.freepik.com/free-vector/chili-pepper-powder-ingredient-illustration-isolated_24911-114464.jpg?t=st=1767360564~exp=1767364164~hmac=57706ef7495b7bc29f574ee963ad974d62692949074e3fc2968df48e13603110&w=1060"
-                        alt="mirchi">
-                    <div class="product" data-name="mirch 200g" data-price="60">
-                        <span class="product-name">mirch 200g</span>
-                        <span class="product-price">₹60</span>
-                        <button onclick="addToCart('mirch 200g', 60)"><span>Add</span></button>
-                    </div>
-                </div>
-
-                <div class="product-view">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB0qDyI0yGz-8PVKtH91YCPnDLbBwfhlOGxA&s"
-                        alt="haldi">
-                    <div class="product" data-name="haldi 200g" data-price="50">
-                        <span class="product-name">haldi 200g</span>
-                        <span class="product-price">₹50</span>
-                        <button onclick="addToCart('haldi 200g', 50)"><span>Add</span></button>
-                    </div>
-                </div>
-
-                <div class="product-view">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmQVOaJAGT3j938egwuwbfsBbg4ZFdpwCe_Q&s"
-                        alt="dhaniya">
-                    <div class="product" data-name="dhaniya 200g" data-price="50">
-                        <span class="product-name">dhaniya 200g</span>
-                        <span class="product-price">₹50</span>
-                        <button onclick="addToCart('dhaniya 200g', 50)"><span>Add</span></button>
-                    </div>
-                </div>
-
-                <div class="product-view">
-                    <img src="https://img.freepik.com/free-photo/png-sunflower-oil-plastic-bottles-isolated-white-background_185193-164228.jpg?t=st=1767361358~exp=1767364958~hmac=30e18d385eb0aa74981af5a8d15829c5d4e94759eadbb03146a9940d7dfc2bab&w=1060"
-                        alt="oil">
-                    <div class="product" data-name="oil 1ltr" data-price="140">
-                        <span class="product-name">oil 1ltr</span>
-                        <span class="product-price">₹140</span>
-                        <button onclick="addToCart('oil 1ltr', 140)"><span>Add</span></button>
-                    </div>
-
-                </div>
         </section>
 
-        <!-- <section class="category">
-            <h2>Oil & Ghee</h2>
+        <section class="fourth-category" id="fourth-category">
+            <div class="category-heading">
+                <h2>Namkeen & Snacks</h2>
+            </div>
 
-            <div class="product" data-name="oil">
-                <span>Mustard Oil 1L</span>
-                <button onclick="addToCart('Mustard Oil 1L')">Add</button>
+            <div class="category h-scroll" id="hScroll" tabindex="0">
+
+                <div class="product-view">
+                    <img src="https://www.balajiwafers.com/cdn/shop/files/Masala_Sev_Murmura_Default_Image_4651bad8-a0ca-4873-ad5c-25df46d8d46b.png?v=1753179554&width=1500"
+                        alt="tea">
+
+                    <div class="product" data-name="masala sev" data-price="5">
+                        <span class="product-name">masala sev</span>
+                        <span class="product-price">₹5</span>
+                        <button onclick="addToCart('masala sev', 5)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="https://www.balajiwafers.com/cdn/shop/files/Crunchem_Simply_Salted_Wafers_Default_8e769ddf-50ba-42f7-bc3e-0f283120e34e.png?v=1749474219&width=1500"
+                        alt="snacks">
+
+                    <div class="product" data-name="crunchem wafers" data-price="5">
+                        <span class="product-name">crunchem wafers</span>
+                        <span class="product-price">₹5</span>
+                        <button onclick="addToCart('crunchem wafers', 5)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="https://www.balajiwafers.com/cdn/shop/files/Masala_Shing_Default_Image_56d3cdb7-8ab9-46a0-b5b8-5b945ee50628.png?v=1749559744&width=1500"
+                        alt="snacks">
+
+                    <div class="product" data-name="masala shing" data-price="5">
+                        <span class="product-name">masala shing</span>
+                        <span class="product-price">₹5</span>
+                        <button onclick="addToCart('masala shing', 5)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="https://www.balajiwafers.com/cdn/shop/files/Chataka_Pataka_Masala_Masti_Default_Image_78bdfbb7-3781-4494-8afb-61152cdaabf0.png?v=1749557786&width=1500"
+                        alt="snacks">
+
+                    <div class="product" data-name="chataka pataka" data-price="5">
+                        <span class="product-name">chataka pataka</span>
+                        <span class="product-price">₹5</span>
+                        <button onclick="addToCart('chataka pataka', 5)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="https://www.balajiwafers.com/cdn/shop/files/Punjabi_Tadka_Default_Image_84999c5b-5078-41f4-a33f-0b1a7fc0609c.png?v=1749555545&width=1500"
+                        alt="snacks">
+
+                    <div class="product" data-name="Punjabi Tadka" data-price="5">
+                        <span class="product-name">Punjabi Tadka</span>
+                        <span class="product-price">₹5</span>
+                        <button onclick="addToCart('Punjabi Tadka', 5)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="https://www.balajiwafers.com/cdn/shop/files/Papdi_Gathiya_Default_Image_58f0ed6f-f52d-4571-8a9e-a0474b336e3d.png?v=1749559519&width=1500"
+                        alt="snaks">
+
+                    <div class="product" data-name="Papdi Gathiya" data-price="5">
+                        <span class="product-name">Papdi Gathiya</span>
+                        <span class="product-price">₹5</span>
+                        <button onclick="addToCart('Papdi Gathiya', 5)"><span>Add</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-heading">
+                <h2>Biscuits & Suparies</h2>
+            </div>
+
+            <div class="category h-scroll" id="hScroll" tabindex="0">
+
+                <div class="product-view">
+                    <img src="https://www.parleproducts.com/Uploads/prdsmallimage/100prodsmall_parle-g.png" alt="parle">
+
+                    <div class="product" data-name="parle-g" data-price="5">
+                        <span class="product-name">parle-g</span>
+                        <span class="product-price">₹5</span>
+                        <button onclick="addToCart('parle-g', 5)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="https://www.parleproducts.com/Uploads/prdsmallimage/2prodsmall_20-20-butter-cookies.png"
+                        alt="20-20">
+
+                    <div class="product" data-name="20-20" data-price="5">
+                        <span class="product-name">20-20</span>
+                        <span class="product-price">₹5</span>
+                        <button onclick="addToCart('20-20', 5)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="https://www.parleproducts.com/Uploads/prdsmallimage/25prodsmall_krack-jack-classic.png"
+                        alt="crack-jeck">
+
+                    <div class="product" data-name="crack-jeck" data-price="5">
+                        <span class="product-name">crack-jeck</span>
+                        <span class="product-price">₹5</span>
+                        <button onclick="addToCart('crack-jeck', 5)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="images\IMG-20260103-WA0002.webp" alt="minaxi">
+
+                    <div class="product" data-name="minaxi" data-price="5">
+                        <span class="product-name">minaxi</span>
+                        <span class="product-price">₹5</span>
+                        <button onclick="addToCart('minaxi', 5)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="images\IMG-20260103-WA0002.webp" alt="minaxi">
+
+                    <div class="product" data-name="minaxi" data-price="10">
+                        <span class="product-name">minaxi</span>
+                        <span class="product-price">₹10</span>
+                        <button onclick="addToCart('minaxi', 10)"><span>Add</span></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="fifth-category" id="fifth-category">
+            <div class="category-heading">
+                <h2>Cooking Oil & Ghee</h2>
+            </div>
+
+            <div class="category h-scroll" id="hScroll" tabindex="0">
+
+                <div class="product-view">
+                    <img src="images-second\1767520789784.webp" alt="krishna">
+
+                    <div class="product" data-name="krishna 1ltr" data-price="140">
+                        <span class="product-name">krishna 1ltr</span>
+                        <span class="product-price">₹140</span>
+                        <button onclick="addToCart('krishna 1ltr', 140)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="images-second\1767521167083.webp" alt="krishna">
+
+                    <div class="product" data-name="krishna 2ltr" data-price="280">
+                        <span class="product-name">krishna 2ltr</span>
+                        <span class="product-price">₹280</span>
+                        <button onclick="addToCart('krishna 2ltr', 280)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="images-second\1767520926164.webp" alt="Ghee">
+
+                    <div class="product" data-name="saras 1/2ltr" data-price="300">
+                        <span class="product-name">saras 1/2ltr</span>
+                        <span class="product-price">₹300</span>
+                        <button onclick="addToCart('saras 1/2ltr', 300)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="images-second\1767520926164.webp" alt="mahaan">
+
+                    <div class="product" data-name="mahaan 1/2ltr" data-price="300">
+                        <span class="product-name">mahaan 1/2ltr</span>
+                        <span class="product-price">₹300</span>
+                        <button onclick="addToCart('mahaan 1/2ltr', 300)"><span>Add</span></button>
+                    </div>
+                </div>
+
+
+                <div class="product-view">
+                    <img src="images-second\1767521167083.webp" alt="krishna">
+
+                    <div class="product" data-name="krishna 5ltr" data-price="700">
+                        <span class="product-name">krishna 5ltr</span>
+                        <span class="product-price">₹700</span>
+                        <button onclick="addToCart('krishna 5ltr', 700)"><span>Add</span></button>
+                    </div>
+                </div>
+
+
+
+                <div class="product-view">
+                    <img src="" alt="sarsu">
+
+                    <div class="product" data-name="sarsu 250g" data-price="50">
+                        <span class="product-name">sarsu 250g</span>
+                        <span class="product-price">₹50</span>
+                        <button onclick="addToCart('sarsu 250g', 50)"><span>Add</span></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sixth-category" id="sixth-category">
+            <div class="category-heading">
+                <h2>Important Notes</h2>
+            </div>
+            <div
+                style="padding: 15px; border: 2px solid gray; border-radius: 10px; line-height: 1.75; font-size: 1.35em; margin: 10px; background-color: #f9f9f9;">
+                <ul>
+                    <li>This is the beta version of Auroo, so not all products are available.</li>
+                    <li>You can mention unavailable products in the description section of the cart.</li>
+                </ul>
+
+            </div>
+            <!-- 
+            <div class="category h-scroll" id="hScroll" tabindex="0">
+
+                <div class="product-view">
+                    <img src="images-second\IMG-20260104-WA0004.webp" alt="mateshwari">
+
+                    <div class="product" data-name="mateshwari 250g" data-price="60">
+                        <span class="product-name">mateshwari 250g</span>
+                        <span class="product-price">₹60</span>
+                        <button onclick="addToCart('mateshwari 250g', 60)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="images\IMG-20260103-WA0010.webp" alt="coffee">
+
+                    <div class="product" data-name="coffee " data-price="10">
+                        <span class="product-name">coffee </span>
+                        <span class="product-price">₹10</span>
+                        <button onclick="addToCart('coffee ', 10)"><span>Add</span></button>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+        <!-- 
+
+        <section class="seventh-category" id="seventh-category">
+            <div class="category-heading">
+                <h2>Cooking Oil & Ghee</h2>
+            </div>
+
+            <div class="category h-scroll" id="hScroll" tabindex="0">
+
+                <div class="product-view">
+                    <img src="https://img.freepik.com/free-vector/matcha-tea-pack-icon-isolated_24640-134464.jpg?t=st=1767359383~exp=1767362983~hmac=75582e55918b95aaf40a0567e89a4ec48f5c2272e665e14b5e01076495b5702e&w=1060"
+                        alt="tea">
+
+                    <div class="product" data-name="mateshwari 250g" data-price="60">
+                        <span class="product-name">mateshwari 250g</span>
+                        <span class="product-price">₹60</span>
+                        <button onclick="addToCart('mateshwari 250g', 60)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="images\IMG-20260103-WA0010.webp" alt="coffee">
+
+                    <div class="product" data-name="coffee " data-price="10">
+                        <span class="product-name">coffee </span>
+                        <span class="product-price">₹10</span>
+                        <button onclick="addToCart('coffee ', 10)"><span>Add</span></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="eighth-category" id="eighth-category">
+            <div class="category-heading">
+                <h2>Tea, Coffee & Beverages</h2>
+            </div>
+
+            <div class="category h-scroll" id="hScroll" tabindex="0">
+
+                <div class="product-view">
+                    <img src="https://img.freepik.com/free-vector/matcha-tea-pack-icon-isolated_24640-134464.jpg?t=st=1767359383~exp=1767362983~hmac=75582e55918b95aaf40a0567e89a4ec48f5c2272e665e14b5e01076495b5702e&w=1060"
+                        alt="tea">
+
+                    <div class="product" data-name="mateshwari 250g" data-price="60">
+                        <span class="product-name">mateshwari 250g</span>
+                        <span class="product-price">₹60</span>
+                        <button onclick="addToCart('mateshwari 250g', 60)"><span>Add</span></button>
+                    </div>
+                </div>
+
+                <div class="product-view">
+                    <img src="images\IMG-20260103-WA0010.webp" alt="coffee">
+
+                    <div class="product" data-name="coffee " data-price="10">
+                        <span class="product-name">coffee </span>
+                        <span class="product-price">₹10</span>
+                        <button onclick="addToCart('coffee ', 10)"><span>Add</span></button>
+                    </div>
+                </div>
             </div>
         </section> -->
+
     </main>
 
     <script>

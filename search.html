@@ -1,19 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Search Results</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auroo - Search Results</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
+
 <body>
 
-<header class="header">
-  <h1>Search Results</h1>
-  <a href="index.html">← Back</a>
-</header>
+  <header class="header">
+    <nav class="nav-bar">
+      <div class="navbar-primery">
+        <!-- <img src="imgs\mamaearth-logo.avif" alt="logo-me" width="140px" height="31.5px"> -->
+        <a href="index.html">
+          <div class="logo exile-regular">
+            <span style="color: #ff9900; font-size: 2em; font-weight: 900;">AUR</span>
+            <span style="color: #4CAF50; font-size: 2em; font-weight: 900;">OO</span>
+          </div>
+        </a>
 
-<div id="results" class="category"></div>
+        <form action="search.html" method="GET" class="sec search-box">
+          <input type="text" name="q" class="search-bar" placeholder="Search items..." required />
+          <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
 
+
+
+
+        <!-- 🛒 -->
+        <a href="cart.html" class="cart-link">
+          <div class="cart-button" disabled>
+            <div class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+            <div class="cart-text">My Cart</div>
+          </div>
+        </a>
+
+        <a href="order.html" class="cart-link">
+          <div class="cart-button" disabled>
+            <div class="cart-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+            <div class="cart-text">Quick Order</div>
+          </div>
+        </a>
+
+      </div>
+
+    </nav>
+  </header>
+  <div class="space" style="margin-top: 80px;"></div>
+  <div id="results" class="category" style="overflow-x: hidden; display: block;"></div>
+
+<script src="js/cart.js"></script>
 <script src="js/search.js"></script>
 </body>
+
 </html>
+
