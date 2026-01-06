@@ -343,19 +343,19 @@ button,
 .product button {
   position: relative;
   overflow: hidden;
-  transition: transform 0.15s ease;
+  transition: transform 0.45s ease;
 }
 
 /* Click press effect */
 .product button:active {
-  transform: scale(0.95);
+  transform: scale(1.25);
 }
 
 /* Success animation */
 .product button.added {
   background: #4caf50;
   color: #fff;
-  animation: pop 0.4s ease;
+  animation: pop 0.75s ease;
 }
 
 /* Checkmark text */

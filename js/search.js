@@ -35,8 +35,11 @@ const products = [
   { name: "lux", price: 30, keywords: "lux hygiene soap" },
   { name: "Neem", price: 20, keywords: "neem hygiene soap" },
   { name: "Viva Rose", price: 20, keywords: "pink hygiene soap" },
-  { name: "Lime", price: 20, keywords: "cinthol hygiene soap" }
-  
+  { name: "Lime", price: 20, keywords: "cinthol hygiene soap" },
+  { name: "clinic-plus", price: 1, keywords: "clinic plus shampoo haircare" },
+  { name: "dove", price: 2, keywords: "dove shampoo haircare" },
+  { name: "sunsilk", price: 1, keywords: "sunsilk head and shoulders shampoo haircare" },
+  { name: "chik", price: 1, keywords: "chik head and shoulders shampoo haircare" },
 ];
 
 // Filter products
