@@ -83,8 +83,12 @@
 
 
                 <!-- USER DETAILS -->
+                <h3>Delivery Details</h3>
                 <div class="details-cart">
-                    <h3>Delivery Details</h3>
+                    <div id="detailsSummary" style="display:none; margin-bottom:12px;">
+                        <h4>Saved Details</h4>
+                        <ul id="summaryList"></ul>
+                    </div>
 
                     <button type="button" id="editToggleBtn" class="btn">
                         Edit Details
@@ -293,6 +297,72 @@ Biscuit 2 packet" required></textarea>
                 lockFields();
                 hideFields();
                 editBtn.textContent = "Edit Details";
+            });
+        })();
+    </script>
+
+
+    <script>
+        (function () {
+            const fields = document.querySelectorAll("[data-save]");
+            const summaryBox = document.getElementById("detailsSummary");
+            const summaryList = document.getElementById("summaryList");
+            const editBtn = document.getElementById("editToggleBtn");
+            const form = document.getElementById("orderForm");
+
+            function buildSummary() {
+                summaryList.innerHTML = "";
+                let hasData = false;
+
+                fields.forEach(field => {
+                    const key = "auroo_" + field.name;
+                    const value = localStorage.getItem(key);
+
+                    if (value) {
+                        hasData = true;
+                        const li = document.createElement("li");
+                        li.textContent = `${field.name}: ${value}`;
+                        summaryList.appendChild(li);
+                    }
+                });
+
+                summaryBox.style.display = hasData ? "block" : "none";
+            }
+
+            // Save only if field is NOT empty
+            fields.forEach(field => {
+                field.addEventListener("input", () => {
+                    const value = field.value.trim();
+                    const key = "auroo_" + field.name;
+
+                    if (value !== "") {
+                        localStorage.setItem(key, value);
+                        buildSummary();
+                    }
+                });
+            });
+
+            // On load
+            window.addEventListener("DOMContentLoaded", buildSummary);
+
+            // Hide summary while editing
+            editBtn.addEventListener("click", () => {
+                if (editBtn.textContent === "Save Details") {
+                    summaryBox.style.display = "none";
+                } else {
+                    buildSummary();
+                }
+            });
+
+            // After submit → rebuild summary
+            form.addEventListener("submit", () => {
+                fields.forEach(field => {
+                    const value = field.value.trim();
+                    if (value !== "") {
+                        localStorage.setItem("auroo_" + field.name, value);
+                    }
+                });
+                buildSummary();
             });
         })();
     </script>
