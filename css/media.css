@@ -18,12 +18,14 @@
     .search-box {
         width: 45%;
         display: flex;
+        justify-content: right;
         /* flex-direction: column; */
         /* gap: 8px; */
         /* align-items: stretch; */
     }
 
     .search-bar {
+        display: none;
         width: 20%;
         font-size: 13px;
         padding: 6px;
@@ -32,12 +34,12 @@
     .search-btn {
         width: 15%;
         padding: 6px;
-        /* border-radius: 6px; */
+        border-radius: 6px;
     }
 
     .cart-button {
         padding: 0px;
-
+        margin: -3px;
     }
 
     .cart-icon {
