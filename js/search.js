@@ -31,8 +31,12 @@ const products = [
   { name: "krishna 1ltr", price: 140, keywords: "krishna oil tel sarso soyabin mustard 1l" },
   { name: "saras 1/2ltr", price: 300, keywords: "saras ghee mahan bilona 1l" },
   { name: "mahaan 1/2ltr", price: 300, keywords: "mahaan ghee mahan bilona 1l" },
+  { name: "lifebuoy", price: 30, keywords: "lifebuoy hygiene soap" },
+  { name: "lux", price: 30, keywords: "lux hygiene soap" },
+  { name: "Neem", price: 20, keywords: "neem hygiene soap" },
+  { name: "Viva Rose", price: 20, keywords: "pink hygiene soap" },
+  { name: "Lime", price: 20, keywords: "cinthol hygiene soap" }
   
-
 ];
 
 // Filter products
@@ -44,7 +48,7 @@ const matched = products.filter(p =>
 const container = document.getElementById("results");
 
 if (matched.length === 0) {
-  container.innerHTML = "<p>No items found</p>";
+  container.innerHTML = "<p>No items found we will list this one soon..</p>";
 } else {
   matched.forEach(p => {
     const div = document.createElement("div");
