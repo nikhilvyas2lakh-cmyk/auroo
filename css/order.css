@@ -6,12 +6,16 @@ body {
   background-color: var(--background-color);
 }
 
+.logo {
+  padding: 0;
+}
+
 .heading-form {
   display: flex;
   width: 100vw;
   justify-content: center;
   align-items: center;
-  font-size: 2em;
+  font-size: 1.25em;
 
 }
 

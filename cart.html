@@ -31,6 +31,13 @@
       border-radius: 14px;
       font-size: 18px;
     }
+
+    .details-cart {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 
@@ -93,13 +100,22 @@
     <!-- Hidden field to send cart -->
     <input type="hidden" name="order_items" id="orderItems">
 
-    <!-- USER DETAILS -->
-    <h3>Delivery Details</h3>
-    <input type="text" name="Name" placeholder="Your Name" required>
-    <input type="tel" name="Mobile Number" placeholder="Mobile Number" required>
 
-    <!-- Location -->
-    <select name="Location Type" required>
+    <!-- USER DETAILS -->
+    <div class="details-cart">
+      <h3>Delivery Details</h3>
+
+      <button type="button" id="editToggleBtn" class="btn">
+        Edit Details
+      </button>
+    </div>
+    <!-- <input type="text" name="Name" placeholder="Your Name" required>
+    <input type="tel" name="Mobile Number" placeholder="Mobile Number" required> -->
+    <input type="text" name="Name" placeholder="Your Name" required data-save>
+
+    <input type="tel" name="Mobile Number" placeholder="Mobile Number" required data-save>
+
+    <select name="Location Type" required data-save>
       <option value="">Nearby-location</option>
       <option>main bus-stand</option>
       <option>Near parshuram chouk</option>
@@ -108,10 +124,11 @@
       <option>Rohida</option>
       <option>Gurjaro ki dhani</option>
       <option>other</option>
-
     </select>
-    <!-- location actual-->
-    <input type="search" name="Location" placeholder="Full Address / Landmark" required>
+
+    <input type="search" name="Location" placeholder="Full Address / Landmark" required data-save>
+
+
 
 
     <textarea name="describe" placeholder="Write the Things you don't get on our site" required></textarea>
@@ -120,6 +137,207 @@
   </form>
 
   <ul id="cartList" class="cart-list"></ul>
+
+  <script>
+    const editableFields = document.querySelectorAll("[data-save]");
+    const toggleBtn = document.getElementById("editToggleBtn");
+
+    let isEditing = false;
+
+    // Lock fields by default if data exists
+    function lockFields() {
+      editableFields.forEach(field => {
+        if (localStorage.getItem("auroo_" + field.name)) {
+          field.setAttribute("readonly", true);
+          field.style.opacity = "0.6";
+        }
+      });
+    }
+
+    function unlockFields() {
+      editableFields.forEach(field => {
+        field.removeAttribute("readonly");
+        field.style.opacity = "1";
+      });
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      lockFields();
+    });
+
+    toggleBtn.addEventListener("click", () => {
+      isEditing = !isEditing;
+
+      if (isEditing) {
+        unlockFields();
+        toggleBtn.textContent = "Save Details";
+      } else {
+        lockFields();
+        toggleBtn.textContent = "Edit Details";
+      }
+    });
+  </script>
+
+  <script>
+    document.querySelectorAll("select[data-save]").forEach(select => {
+      select.addEventListener("mousedown", e => {
+        if (select.hasAttribute("data-locked")) {
+          e.preventDefault();
+        }
+      });
+    });
+
+    function lockFields() {
+      editableFields.forEach(field => {
+        if (localStorage.getItem("auroo_" + field.name)) {
+          if (field.tagName === "SELECT") {
+            field.setAttribute("data-locked", "true");
+            field.style.pointerEvents = "none";
+          } else {
+            field.setAttribute("readonly", true);
+          }
+          field.style.opacity = "0.6";
+        }
+      });
+    }
+
+    function unlockFields() {
+      editableFields.forEach(field => {
+        field.removeAttribute("readonly");
+        field.removeAttribute("data-locked");
+        field.style.pointerEvents = "auto";
+        field.style.opacity = "1";
+      });
+    }
+  </script>
+
+  <script>
+    const SAVE_PREFIX = "auroo_";
+
+    // Load saved data
+    document.querySelectorAll("[data-save]").forEach(field => {
+      const key = SAVE_PREFIX + field.name;
+      const savedValue = localStorage.getItem(key);
+
+      if (savedValue) {
+        field.value = savedValue;
+      }
+
+      // Save on change
+      field.addEventListener("input", () => {
+        localStorage.setItem(key, field.value);
+      });
+    });
+  </script>
+
+  <script>
+    (function () {
+      const fields = document.querySelectorAll("[data-save]");
+      const editBtn = document.getElementById("editToggleBtn");
+      const form = document.getElementById("orderForm");
+
+      let editing = false;
+
+      function hideFields() {
+        fields.forEach(field => {
+          if (localStorage.getItem("auroo_" + field.name)) {
+            field.style.display = "none";
+          }
+        });
+      }
+
+      function showFields() {
+        fields.forEach(field => {
+          field.style.display = "block";
+        });
+      }
+
+      function lockFields() {
+        fields.forEach(field => {
+          if (field.tagName === "SELECT") {
+            field.style.pointerEvents = "none";
+          } else {
+            field.setAttribute("readonly", true);
+          }
+        });
+      }
+
+      function unlockFields() {
+        fields.forEach(field => {
+          field.removeAttribute("readonly");
+          field.style.pointerEvents = "auto";
+        });
+      }
+
+      window.addEventListener("DOMContentLoaded", () => {
+        hideFields();
+        lockFields();
+      });
+
+      editBtn.addEventListener("click", () => {
+        editing = !editing;
+
+        if (editing) {
+          showFields();
+          unlockFields();
+          editBtn.textContent = "Save Details";
+        } else {
+          lockFields();
+          hideFields();
+          editBtn.textContent = "Edit Details";
+        }
+      });
+
+      form.addEventListener("submit", () => {
+        fields.forEach(field => {
+          localStorage.setItem("auroo_" + field.name, field.value);
+        });
+
+        lockFields();
+        hideFields();
+        editBtn.textContent = "Edit Details";
+      });
+    })();
+  </script>
+
+
+
+  <!-- 
+  <script>
+    const addressInput = document.getElementById("addressInput");
+    const savedBox = document.getElementById("savedAddressBox");
+    const savedText = document.getElementById("savedAddressText");
+    const changeBtn = document.getElementById("changeAddressBtn");
+
+    const SAVED_ADDRESS_KEY = "auroo_saved_address";
+
+    // On page load
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedAddress = localStorage.getItem(SAVED_ADDRESS_KEY);
+
+      if (savedAddress) {
+        savedText.textContent = savedAddress;
+        addressInput.value = savedAddress;
+
+        addressInput.style.display = "none";
+        savedBox.style.display = "block";
+      }
+    });
+
+    // Save address when user types
+    addressInput.addEventListener("blur", () => {
+      if (addressInput.value.trim() !== "") {
+        localStorage.setItem(SAVED_ADDRESS_KEY, addressInput.value.trim());
+      }
+    });
+
+    // Change address
+    changeBtn.addEventListener("click", () => {
+      addressInput.style.display = "block";
+      savedBox.style.display = "none";
+      addressInput.focus();
+    });
+  </script> -->
 
 
   <script src="js/cart.js"></script>
