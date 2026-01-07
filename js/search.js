@@ -44,6 +44,12 @@ const products = [
   { name: "Nihar Shanti", price: 10, keywords: "nihar shanti hair oil" },
   { name: "Nihar Shanti", price: 47, keywords: "nihar shanti hair oil" },
   { name: "Sarso Anwala", price: 10, keywords: "sarso anwala kartik hair oil" },
+  { name: "Elaichi", price: 10, keywords: "elaichi cardamom" },
+  { name: "Kali-Mirch", price: 10, keywords: "kali mirch black pepper" },
+  { name: "loong", price: 10, keywords: "long loong masala" },
+  { name: "Falahari", price: 10, keywords: "falahari namkeen snack" },
+  { name: "Ajmer sev", price: 65, keywords: "ajmer sev namkeen snack" }
+  
 ];
 
 // Filter products
