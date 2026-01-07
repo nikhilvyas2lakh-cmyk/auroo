@@ -40,6 +40,10 @@ const products = [
   { name: "dove", price: 2, keywords: "dove shampoo haircare" },
   { name: "sunsilk", price: 1, keywords: "sunsilk head and shoulders shampoo haircare" },
   { name: "chik", price: 1, keywords: "chik head and shoulders shampoo haircare" },
+  { name: "Nihar Shanti", price: 20, keywords: "nihar shanti hair oil" },
+  { name: "Nihar Shanti", price: 10, keywords: "nihar shanti hair oil" },
+  { name: "Nihar Shanti", price: 47, keywords: "nihar shanti hair oil" },
+  { name: "Sarso Anwala", price: 10, keywords: "sarso anwala kartik hair oil" },
 ];
 
 // Filter products
