@@ -8,7 +8,30 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/media.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @media (max-width: 600px) {
 
+      .search-box {
+        width: 50%;
+        display: flex;
+        justify-content: right;
+        /* flex-direction: column; */
+        /* gap: 8px; */
+        /* align-items: stretch; */
+      }
+
+      .search-bar {
+        display: flex;
+        font-size: 13px;
+        padding: 6px;
+
+      }
+
+      .search-btn {
+        border-radius: 0 6px 6px 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -55,9 +78,8 @@
   <div class="space" style="margin-top: 80px;"></div>
   <div id="results" class="category" style="overflow-x: hidden; display: block;"></div>
 
-<script src="js/cart.js"></script>
-<script src="js/search.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/search.js"></script>
 </body>
 
 </html>
-
