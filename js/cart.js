@@ -105,3 +105,27 @@ function renderCartPage() {
   totalEl.textContent = total;
 }
 
+function getCartTotal() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || {};
+  let total = 0;
+
+  for (let item in cart) {
+    total += cart[item].qty * cart[item].price;
+  }
+
+  return total;
+}
+
+document.getElementById("orderForm").addEventListener("submit", function (e) {
+  const total = getCartTotal();
+
+  if (total <= 49) {
+    e.preventDefault();
+    alert("Minimum order value must be more than ₹50.");
+    return;
+  }
+
+  // allow submit → clear cart
+  localStorage.removeItem("cart");
+});
+
