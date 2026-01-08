@@ -48,8 +48,13 @@ const products = [
   { name: "Kali-Mirch", price: 10, keywords: "kali mirch black pepper" },
   { name: "loong", price: 10, keywords: "long loong masala" },
   { name: "Falahari", price: 10, keywords: "falahari namkeen snack" },
-  { name: "Ajmer sev", price: 65, keywords: "ajmer sev namkeen snack" }
-  
+  { name: "Ajmer sev", price: 65, keywords: "ajmer sev namkeen snack" },
+  { name: "Damdar Kon", price: 5, keywords: "damdar kon cleaning household" },
+  { name: "Mahandi", price: 10, keywords: "mahandi golden priya cleaning household" },
+  { name: "Sarpanch Soap", price: 10, keywords: "sarpanch soap cleaning household" },
+  { name: "ChandraDev Soap", price: 10, keywords: "chandradev soap cleaning household" },
+  { name: "Agrawal Soap 1kg", price: 90, keywords: "agrawal soap cleaning household" },
+
 ];
 
 // Filter products
