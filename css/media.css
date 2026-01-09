@@ -14,7 +14,7 @@
         justify-content: space-evenly;
     }
 
-    
+
     .search-box {
         width: 45%;
         display: flex;
@@ -108,7 +108,39 @@
         padding: 8px;
         gap: 8px;
     }
+
+    .cart-btn-link {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 15px;
+        width: 85vw;
+        border-radius: 12px;
+        margin: 8px auto;
+        position: fixed;
+        bottom: 0px;
+        right: 17px;
+        z-index: 100;
+        /* animation */
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        pointer-events: none;
+    }
+
+    .cart-btn-link.show {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .cart-btn-link div {
+        display: flex;
+        justify-content: space-between;
+        width: 300%;
+    }
+
 }
+
 /* 
 @media (max-width: 380px) {
     .hero-section {

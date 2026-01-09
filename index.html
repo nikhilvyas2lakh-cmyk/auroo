@@ -31,6 +31,13 @@
                     </div>
                 </a>
 
+                <!-- <a href="">
+                    <div>
+                        <h2>DODIYANA</h2>
+                        <p>Nearby Areas</p>
+                    </div>
+                </a> -->
+
                 <a href="search.html" style="width: 50%;">
                     <form action="search.html" method="GET" class="sec search-box" style="width: 100%;">
                         <input type="text" name="q" class="search-bar" placeholder="Search items..." />
@@ -1059,6 +1066,23 @@
                 </div>
             </div>
 
+
+            <section class="cart-btn-link btn">
+
+                <a href="cart.html" class="my-cart">
+                    <div>
+                        <h3> <i class="fa-solid fa-cart-shopping" style="color: #181818ef;"></i>
+                            &nbsp; My Cart</h3>
+                        <h3><i class="fa-solid fa-arrow-right"></i></h3>
+
+                    </div>
+
+
+                </a>
+
+
+            </section>
+
             <div class="category-heading">
                 <h2>Important Notes</h2>
             </div>
@@ -1073,43 +1097,52 @@
             </div>
         </section>
 
+
     </main>
 
     <script>
         let lastScrollY = window.scrollY;
+
         const navbar = document.getElementById("navbar");
+        const cartBtn = document.querySelector(".cart-btn-link");
 
         window.addEventListener("scroll", () => {
             const currentScroll = window.scrollY;
 
+            // Navbar: hide on scroll down
             if (currentScroll > lastScrollY && currentScroll > 80) {
                 navbar.classList.add("hide");
             } else {
                 navbar.classList.remove("hide");
             }
 
+            // Cart button: show on scroll down
+            if (currentScroll > lastScrollY && currentScroll > 80) {
+                cartBtn.classList.add("show");
+            } else {
+                cartBtn.classList.remove("show");
+            }
+
             lastScrollY = currentScroll;
         });
-
 
         function handleAdd(btn, name, price) {
             addToCart(name, price);
 
             btn.classList.add("added");
-
             setTimeout(() => {
                 btn.classList.remove("added");
             }, 900);
         }
-
     </script>
 
 
-    <script src="js/cart.js"></script>
-</body>
 
-<footer style="display: flex; height: 35px; justify-content: center; align-items: center;">
-    <p>&copy; 2026 Auroo. Made With <span style="color:#ff9900;">&#10084;</span> By Nikhil Vyas.</p>
-</footer>
+    <script src="js/cart.js"></script>
+
+    <footer style="display: flex; height: 35px; justify-content: center; align-items: center;">
+        <p>&copy; 2026 Auroo. Made With <span style="color:#ff9900;">&#10084;</span> By Nikhil Vyas.</p>
+    </footer>
+</body>
 
 </html>
