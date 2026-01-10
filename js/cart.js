@@ -119,9 +119,9 @@ function getCartTotal() {
 document.getElementById("orderForm").addEventListener("submit", function (e) {
   const total = getCartTotal();
 
-  if (total <= 49) {
+  if (total <= 199) {
     e.preventDefault();
-    alert("Minimum order value must be more than ₹50.");
+    alert("Minimum order value must be more than ₹200.");
     return;
   }
 
