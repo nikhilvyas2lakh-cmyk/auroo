@@ -419,19 +419,12 @@ select {
 .cart-btn-link {
   display: none;
 }
-
-
-
-/* banner for install */
-
-
-
 .install-banner {
   position: fixed;
   bottom: 16px;
   left: 16px;
   right: 16px;
-  background: #4CAF50;
+  background: #ff6f00; /* Auroo accent */
   color: #fff;
   border-radius: 14px;
   padding: 14px;
@@ -459,14 +452,14 @@ select {
 }
 
 .banner-icon {
-  width: 48px;
-  height: 48px;
-  animation: pulse 1.8s infinite;
+  width: 44px;
+  height: 44px;
+  animation: pulse 1.6s infinite;
 }
 
-#installBtn {
+.install-banner button {
   background: #ffffff;
-  color: #4CAF50;
+  color: #ff6f00;
   border: none;
   padding: 8px 16px;
   border-radius: 8px;
@@ -481,6 +474,7 @@ select {
 
 @keyframes pulse {
   0% { transform: scale(1); }
-  50% { transform: scale(1.08); }
+  50% { transform: scale(1.1); }
   100% { transform: scale(1); }
 }
+/* ============================================================ */

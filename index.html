@@ -1097,16 +1097,76 @@
             </div>
         </section>
 
-        
+
 
     </main>
-    <!-- iOS Install Hint -->
-        <div id="iosBanner" class="install-banner ios hidden">
-            <p>
-                Install <strong>Auroo</strong>:
-                Tap <strong>Share</strong> → <strong>Add to Home Screen</strong>
-            </p>
+    <!-- Auroo Install Banner -->
+    <div id="aurooInstallBanner" class="install-banner hidden">
+        <div class="banner-content">
+            <img src="/android-chrome-192x192.png" alt="Auroo" class="banner-icon">
+            <div>
+                <strong>Install Auroo</strong>
+                <p>Local stores. Fast delivery.</p>
+            </div>
         </div>
+        <button id="aurooInstallBtn">Install</button>
+    </div>
+
+    <!-- iOS Install Hint -->
+    <div id="aurooIosBanner" class="install-banner ios hidden">
+        <p>
+            Install <strong>Auroo</strong>:<br>
+            Tap <strong>Share</strong> → <strong>Add to Home Screen</strong>
+        </p>
+    </div>
+
+
+    <script>
+        let aurooPrompt;
+
+        const banner = document.getElementById("aurooInstallBanner");
+        const btn = document.getElementById("aurooInstallBtn");
+        const iosBanner = document.getElementById("aurooIosBanner");
+
+        const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+        const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+
+        // Android / Desktop
+        window.addEventListener("beforeinstallprompt", (e) => {
+            e.preventDefault();
+            aurooPrompt = e;
+
+            if (!localStorage.getItem("aurooInstalled")) {
+                banner.classList.remove("hidden");
+            }
+        });
+
+        btn.addEventListener("click", async () => {
+            banner.classList.add("hidden");
+            aurooPrompt.prompt();
+            await aurooPrompt.userChoice;
+            aurooPrompt = null;
+        });
+
+        // Auto-hide after install
+        window.addEventListener("appinstalled", () => {
+            localStorage.setItem("aurooInstalled", "true");
+            banner.classList.add("hidden");
+        });
+
+        // iOS manual install UI
+        if (isIOS && !isStandalone) {
+            iosBanner.classList.remove("hidden");
+        }
+    </script>
+    
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("/service-worker.js");
+        }
+    </script>
+
+
 
 
     <script>
@@ -1144,60 +1204,6 @@
             }, 900);
         }
     </script>
-
-
-
-    <script>
-        let deferredPrompt;
-        const installBanner = document.getElementById("installBanner");
-        const installBtn = document.getElementById("installBtn");
-        const iosBanner = document.getElementById("iosBanner");
-
-        // Detect iOS
-        const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
-        const isInStandalone = window.matchMedia('(display-mode: standalone)').matches;
-
-        // ANDROID / DESKTOP INSTALL
-        window.addEventListener("beforeinstallprompt", (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            installBanner.classList.remove("hidden");
-        });
-
-        installBtn.addEventListener("click", async () => {
-            installBanner.classList.add("hidden");
-            deferredPrompt.prompt();
-            const choice = await deferredPrompt.userChoice;
-            deferredPrompt = null;
-        });
-
-        // AUTO-HIDE AFTER INSTALL
-        window.addEventListener("appinstalled", () => {
-            installBanner.classList.add("hidden");
-            localStorage.setItem("fogatInstalled", "true");
-        });
-
-        // iOS INSTALL UI
-        if (isIOS && !isInStandalone) {
-            iosBanner.classList.remove("hidden");
-        }
-
-        // DO NOT SHOW AGAIN IF INSTALLED
-        if (localStorage.getItem("fogatInstalled")) {
-            installBanner.classList.add("hidden");
-        }
-    </script>
-
-
-    <script>
-        if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.register("/service-worker.js")
-                .then(() => console.log("SW registered"))
-                .catch(err => console.error("SW error", err));
-        }
-    </script>
-
-
 
     <script src="js/cart.js"></script>
 
