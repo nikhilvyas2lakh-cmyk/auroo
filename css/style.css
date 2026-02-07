@@ -249,7 +249,7 @@ section .quick-order a:focus {
 
 .navbar-secondary a {
   transition: all 0.25s ease-in;
-  background-color: #8a86868e;
+  background-color: #8a868638;
   padding: 7px;
   border-radius: 6px;
   
