@@ -170,181 +170,48 @@
   <ul id="cartList" class="cart-list"></ul>
 
   <script>
-    const editableFields = document.querySelectorAll("[data-save]");
-    const toggleBtn = document.getElementById("editToggleBtn");
-
-    let isEditing = false;
-
-    // Lock fields by default if data exists
-    function lockFields() {
-      editableFields.forEach(field => {
-        if (localStorage.getItem("auroo_" + field.name)) {
-          field.setAttribute("readonly", true);
-          field.style.opacity = "0.6";
-        }
-      });
-    }
-
-    function unlockFields() {
-      editableFields.forEach(field => {
-        field.removeAttribute("readonly");
-        field.style.opacity = "1";
-      });
-    }
-
-    window.addEventListener("DOMContentLoaded", () => {
-      lockFields();
-    });
-
-    toggleBtn.addEventListener("click", () => {
-      isEditing = !isEditing;
-
-      if (isEditing) {
-        unlockFields();
-        toggleBtn.textContent = "Save Details";
-      } else {
-        lockFields();
-        toggleBtn.textContent = "Edit Details";
-      }
-    });
-  </script>
-
-  <script>
-    document.querySelectorAll("select[data-save]").forEach(select => {
-      select.addEventListener("mousedown", e => {
-        if (select.hasAttribute("data-locked")) {
-          e.preventDefault();
-        }
-      });
-    });
-
-    function lockFields() {
-      editableFields.forEach(field => {
-        if (localStorage.getItem("auroo_" + field.name)) {
-          if (field.tagName === "SELECT") {
-            field.setAttribute("data-locked", "true");
-            field.style.pointerEvents = "none";
-          } else {
-            field.setAttribute("readonly", true);
-          }
-          field.style.opacity = "0.6";
-        }
-      });
-    }
-
-    function unlockFields() {
-      editableFields.forEach(field => {
-        field.removeAttribute("readonly");
-        field.removeAttribute("data-locked");
-        field.style.pointerEvents = "auto";
-        field.style.opacity = "1";
-      });
-    }
-  </script>
-
-  <script>
-    const SAVE_PREFIX = "auroo_";
-
-    // Load saved data
-    document.querySelectorAll("[data-save]").forEach(field => {
-      const key = SAVE_PREFIX + field.name;
-      const savedValue = localStorage.getItem(key);
-
-      if (savedValue) {
-        field.value = savedValue;
-      }
-
-      // Save on change
-      field.addEventListener("input", () => {
-        localStorage.setItem(key, field.value);
-      });
-    });
-  </script>
-
-  <script>
     (function () {
-      const fields = document.querySelectorAll("[data-save]");
-      const editBtn = document.getElementById("editToggleBtn");
-      const form = document.getElementById("orderForm");
-
-      let editing = false;
-
-      function hideFields() {
-        fields.forEach(field => {
-          if (localStorage.getItem("auroo_" + field.name)) {
-            field.style.display = "none";
-          }
-        });
-      }
-
-      function showFields() {
-        fields.forEach(field => {
-          field.style.display = "block";
-        });
-      }
-
-      function lockFields() {
-        fields.forEach(field => {
-          if (field.tagName === "SELECT") {
-            field.style.pointerEvents = "none";
-          } else {
-            field.setAttribute("readonly", true);
-          }
-        });
-      }
-
-      function unlockFields() {
-        fields.forEach(field => {
-          field.removeAttribute("readonly");
-          field.style.pointerEvents = "auto";
-        });
-      }
-
-      window.addEventListener("DOMContentLoaded", () => {
-        hideFields();
-        lockFields();
-      });
-
-      editBtn.addEventListener("click", () => {
-        editing = !editing;
-
-        if (editing) {
-          showFields();
-          unlockFields();
-          editBtn.textContent = "Save Details";
-        } else {
-          lockFields();
-          hideFields();
-          editBtn.textContent = "Edit Details";
-        }
-      });
-
-      form.addEventListener("submit", () => {
-        fields.forEach(field => {
-          localStorage.setItem("auroo_" + field.name, field.value);
-        });
-
-        lockFields();
-        hideFields();
-        editBtn.textContent = "Edit Details";
-      });
-    })();
-  </script>
-
-  <script>
-    (function () {
+      const SAVE_PREFIX = "auroo_";
       const fields = document.querySelectorAll("[data-save]");
       const summaryBox = document.getElementById("detailsSummary");
       const summaryList = document.getElementById("summaryList");
       const editBtn = document.getElementById("editToggleBtn");
       const form = document.getElementById("orderForm");
 
+      function loadSavedValues() {
+        fields.forEach(field => {
+          const key = SAVE_PREFIX + field.name;
+          const savedValue = localStorage.getItem(key);
+          if (savedValue) {
+            field.value = savedValue;
+          }
+        });
+      }
+
+      function saveValues() {
+        fields.forEach(field => {
+          const value = field.value.trim();
+          const key = SAVE_PREFIX + field.name;
+          if (value !== "") {
+            localStorage.setItem(key, value);
+          }
+        });
+      }
+
+      function hasSavedValues() {
+        return Array.from(fields).some(field => {
+          const key = SAVE_PREFIX + field.name;
+          const value = localStorage.getItem(key);
+          return value && value.trim() !== "";
+        });
+      }
+
       function buildSummary() {
         summaryList.innerHTML = "";
         let hasData = false;
 
         fields.forEach(field => {
-          const key = "auroo_" + field.name;
+          const key = SAVE_PREFIX + field.name;
           const value = localStorage.getItem(key);
 
           if (value) {
@@ -358,40 +225,73 @@
         summaryBox.style.display = hasData ? "block" : "none";
       }
 
-      // Save only if field is NOT empty
-      fields.forEach(field => {
-        field.addEventListener("input", () => {
-          const value = field.value.trim();
-          const key = "auroo_" + field.name;
-
-          if (value !== "") {
-            localStorage.setItem(key, value);
-            buildSummary();
+      function lockFields() {
+        fields.forEach(field => {
+          if (field.tagName === "SELECT") {
+            field.style.pointerEvents = "none";
+          } else {
+            field.setAttribute("readonly", true);
           }
+          field.style.opacity = "0.6";
         });
+      }
+
+      function unlockFields() {
+        fields.forEach(field => {
+          field.removeAttribute("readonly");
+          field.style.pointerEvents = "auto";
+          field.style.opacity = "1";
+        });
+      }
+
+      function hideFields() {
+        fields.forEach(field => {
+          field.style.display = "none";
+        });
+      }
+
+      function showFields() {
+        fields.forEach(field => {
+          field.style.display = "block";
+        });
+      }
+
+      function setEditing(isEditing) {
+        if (isEditing) {
+          showFields();
+          unlockFields();
+          summaryBox.style.display = "none";
+          editBtn.textContent = "Save Details";
+        } else {
+          lockFields();
+          if (hasSavedValues()) {
+            hideFields();
+            buildSummary();
+          } else {
+            showFields();
+          }
+          editBtn.textContent = "Edit Details";
+        }
+      }
+
+      window.addEventListener("DOMContentLoaded", () => {
+        loadSavedValues();
+        buildSummary();
+        setEditing(!hasSavedValues());
       });
 
-      // On load
-      window.addEventListener("DOMContentLoaded", buildSummary);
-
-      // Hide summary while editing
       editBtn.addEventListener("click", () => {
         if (editBtn.textContent === "Save Details") {
-          summaryBox.style.display = "none";
+          saveValues();
+          setEditing(false);
         } else {
-          buildSummary();
+          setEditing(true);
         }
       });
 
-      // After submit → rebuild summary
       form.addEventListener("submit", () => {
-        fields.forEach(field => {
-          const value = field.value.trim();
-          if (value !== "") {
-            localStorage.setItem("auroo_" + field.name, value);
-          }
-        });
-        buildSummary();
+        saveValues();
+        setEditing(false);
       });
     })();
   </script>

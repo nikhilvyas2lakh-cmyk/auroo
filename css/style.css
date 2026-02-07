@@ -537,3 +537,32 @@ select {
 .add-count.hidden {
   display: none;
 }
+
+/* ================== */
+.beta-version-note {
+  margin: 20px 12px 40px;
+}
+
+.beta-version-note .category-heading h2 {
+  padding: 18px 12px 8px;
+}
+
+.beta-note-box {
+  padding: 16px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.beta-note-box ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.beta-note-box li {
+  margin: 6px 0;
+  color: #2b2b2b;
+}
