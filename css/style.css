@@ -305,30 +305,57 @@ section .quick-order a:focus {
 
 
 .product-view {
-  min-width: 200px;
-  max-width: 200px;
-  height: 250px;
-  border-radius: 15px;
-  background: #fff;
-  margin: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
+  min-width: 220px;
+  max-width: 220px;
+  height: 300px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  margin: 16px;
+  padding: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .product-view img {
-  border-radius: 15px 15px 0 0;
   width: 100%;
-  height: 175px;
+  height: 170px;
   object-fit: cover;
-
+  background: #f4f4f4;
+  border-radius: 14px;
+  margin: 0 auto;
 }
 
 .product {
   display: flex;
-  padding: 12px;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 4px 2px;
+  height: 100%;
+}
+
+.product-view:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.14);
+  border-color: rgba(76, 175, 80, 0.25);
+}
+
+.product-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f1f1f;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-price {
+  white-space: nowrap;
+  font-size: 13px;
+  color: #2e7d32;
 }
 
 button,
@@ -348,6 +375,28 @@ button,
   position: relative;
   overflow: hidden;
   transition: transform 0.45s ease;
+  padding: 8px 14px;
+}
+
+.product .qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  align-self: flex-end;
+}
+
+.product .minus-btn {
+  background: #f2f2f2;
+  color: #222;
+  border: 1px solid #d5d5d5;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.product .minus-btn:hover {
+  background: #e8e8e8;
 }
 
 /* Click press effect */
@@ -478,3 +527,13 @@ select {
   100% { transform: scale(1); }
 }
 /* ============================================================ */
+
+.add-count {
+  margin-left: 6px;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.add-count.hidden {
+  display: none;
+}

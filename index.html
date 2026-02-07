@@ -122,7 +122,8 @@
                     <div class="product" data-name="fryums 1kg" data-price="65">
                         <span class="product-name">Fryums 1kg</span>
                         <span class="product-price">₹65</span>
-                        <button onclick="addToCart('fryums 1kg', 65)"><span>Add</span></button>
+                        <button onclick="addToCart('fryums 1kg', 65)"><span>Add</span>
+                        </button>
                     </div>
                 </div>
 
@@ -1159,15 +1160,14 @@
             iosBanner.classList.remove("hidden");
         }
     </script>
-    
+
     <script>
-        if ("serviceWorker" in navigator) {
+        if ("serviceWorker" in navigator && window.location.protocol !== "file:") {
             navigator.serviceWorker.register("/service-worker.js");
         }
     </script>
 
-
-
+    
 
     <script>
         let lastScrollY = window.scrollY;
