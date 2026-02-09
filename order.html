@@ -4,31 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auroo - Search Results</title>
+    <title>Auroo - Quick Order</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/order.css">
     <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        form {
-            width: 80vw;
-            margin: auto;
-        }
-
-
-        .details-cart {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-
-        .cart-btn {
-            text-decoration: none;
-            margin-left: 12px;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -75,13 +60,31 @@
     <div class="space" style="margin-top: 80px;"></div>
 
 
-    <section class="container">
-        <div class="heading-form">
-            <h2>Quick Grocery Order</h2>
-        </div>
-        <!-- <p class="note">Write your items one per line</p> -->
-        <div class="quick-form">
-            <form action="https://api.web3forms.com/submit" method="POST">
+    <main class="order-page">
+        <section class="order-hero">
+            <div class="hero-badge">
+                <i class="fa-solid fa-truck-ramp-box"></i>
+                <span>Quick Order</span>
+            </div>
+            <h1>Quick Grocery Order</h1>
+            <p class="hero-subtitle">Tell us what you need. We will confirm on call and deliver fast.</p>
+            <div class="hero-pills">
+                <span>Cash on delivery</span>
+                <span>Any brand okay</span>
+                <span>One item per line</span>
+            </div>
+        </section>
+
+        <section class="order-panel">
+            <div class="panel-header">
+                <div>
+                    <h2>Delivery Details</h2>
+                    <p>Save your details once for faster ordering next time.</p>
+                </div>
+            </div>
+
+            <div class="quick-form">
+                <form id="orderForm" action="https://api.web3forms.com/submit" method="POST">
 
                 <!-- Web3Forms Key -->
                 <input type="hidden" name="access_key" value="d2b23d01-9c50-4410-9907-7f3054c47b84">
@@ -89,14 +92,13 @@
 
 
                 <!-- USER DETAILS -->
-                <h3>Delivery Details</h3>
                 <div class="details-cart">
-                    <div id="detailsSummary" style="display:none; margin-bottom:12px;">
+                    <div id="detailsSummary" class="details-summary" style="display:none;">
                         <h4>Saved Details</h4>
                         <ul id="summaryList"></ul>
                     </div>
 
-                    <button type="button" id="editToggleBtn" class="btn">
+                    <button type="button" id="editToggleBtn" class="btn ghost">
                         Edit Details
                     </button>
                 </div>
@@ -122,7 +124,8 @@
                 <!-- <textarea  name="Address" placeholder="Full Address / Landmark" required></textarea> -->
 
                 <!-- SINGLE TODO-LIST FIELD -->
-                <h2>Your Grocery List</h2>
+                <div class="divider"></div>
+                <h3 class="list-title">Your Grocery List</h3>
 
                 <textarea name="Grocery List" class="list-field" placeholder="Example:
 Rice 2 kg
@@ -131,17 +134,18 @@ Oil 1 litre
 Biscuit 2 packet" required></textarea>
 
                 <p class="hint">
-                    • Write one item per line<br>
-                    • Any brand is okay<br>
-                    • We will call to confirm <br>
-                    • Only cash on delivery
+                    Write one item per line. Any brand is okay. We will call to confirm. Only cash on delivery.
                 </p>
 
-                <button type="submit">Send Order</button>
+                <button type="submit" class="primary">
+                    <span>Send Order</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
 
-            </form>
-        </div>
-    </section>
+                </form>
+            </div>
+        </section>
+    </main>
 
 
 

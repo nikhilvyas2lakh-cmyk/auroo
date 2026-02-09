@@ -4,68 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Auroo - Search Results</title>
+  <title>Auroo - My Cart</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cart.css">
   <link rel="stylesheet" href="css/media.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <style>
-    form {
-      width: 80vw;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      padding: 10px;
-    }
-
-
-    input,
-    select,
-    textarea {
-      width: 85%;
-      margin-top: 13px;
-      padding: 16px;
-      background: #222;
-      color: #fff;
-      border: 1px solid #333;
-      border-radius: 14px;
-      font-size: 18px;
-    }
-
-    .details-cart {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-
-    .cart-btn {
-      text-decoration: none;
-      margin-left: 12px;
-    }
-
-    .logo {
-      padding: 0;
-    }
-
-    /* Submit button base */
-    button[type="submit"] {
-      background-color: #4CAF50;
-      color: #fff;
-      border: none;
-      padding: 12px 18px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-    }
-
-    /* On click */
-    button[type="submit"]:active {
-      background-color: #ff9900;
-      /* yellow */
-      color: #000;
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -111,63 +59,83 @@
   <div class="space" style="margin-top: 80px;"></div>
 
 
-  <form action="https://api.web3forms.com/submit" method="POST" id="orderForm">
-
-    <!-- REQUIRED -->
-    <input type="hidden" name="access_key" value="f199cdff-de04-41ab-8140-2b19688cd56d">
-
-    <!-- CART ITEMS -->
-    <h3>Items</h3>
-    <ul id="cartList" class="cart-list"></ul>
-
-    <h3>Total: ₹<span id="cartTotal">0</span></h3>
-
-
-    <!-- Hidden field to send cart -->
-    <input type="hidden" name="order_items" id="orderItems">
-
-
-    <!-- USER DETAILS -->
-    <h3>Delivery Details</h3>
-
-    <div class="details-cart">
-      <div id="detailsSummary" style="display:none; margin-bottom:12px;">
-        <h4>Saved Details</h4>
-        <ul id="summaryList"></ul>
+  <main class="cart-page">
+    <section class="cart-hero">
+      <div class="hero-badge">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span>My Cart</span>
       </div>
+      <h1>Your Cart, Ready to Go</h1>
+      <p class="hero-subtitle">Review items, confirm details, and place your order in one step.</p>
+      <div class="hero-pills">
+        <span>Fast confirmation</span>
+        <span>Cash on delivery</span>
+        <span>Local delivery</span>
+      </div>
+    </section>
 
-      <button type="button" id="editToggleBtn" class="btn">
-        Edit Details
-      </button>
-    </div>
-    <!-- <input type="text" name="Name" placeholder="Your Name" required>
+    <section class="cart-panel">
+      <form action="https://api.web3forms.com/submit" method="POST" id="orderForm">
+
+        <!-- REQUIRED -->
+        <input type="hidden" name="access_key" value="f199cdff-de04-41ab-8140-2b19688cd56d">
+
+        <!-- CART ITEMS -->
+        <div class="panel-header">
+          <h2>Items</h2>
+          <div class="total-pill">Total: ₹<span id="cartTotal">0</span></div>
+        </div>
+        <ul id="cartList" class="cart-list"></ul>
+
+        <!-- Hidden field to send cart -->
+        <input type="hidden" name="order_items" id="orderItems">
+
+        <div class="divider"></div>
+
+        <!-- USER DETAILS -->
+        <div class="details-heading">
+          <h3>Delivery Details</h3>
+          <p>Save your details for faster checkout next time.</p>
+        </div>
+
+        <div class="details-cart">
+          <div id="detailsSummary" class="details-summary" style="display:none;">
+            <h4>Saved Details</h4>
+            <ul id="summaryList"></ul>
+          </div>
+
+          <button type="button" id="editToggleBtn" class="btn ghost">
+            Edit Details
+          </button>
+        </div>
+        <!-- <input type="text" name="Name" placeholder="Your Name" required>
     <input type="tel" name="Mobile Number" placeholder="Mobile Number" required> -->
-    <input type="text" name="Name" placeholder="Your Name" required data-save>
+        <input type="text" name="Name" placeholder="Your Name" required data-save>
 
-    <input type="tel" name="Mobile Number" placeholder="Mobile Number" required data-save>
+        <input type="tel" name="Mobile Number" placeholder="Mobile Number" required data-save>
 
-    <select name="Location Type" required data-save>
-      <option value="">Nearby-location</option>
-      <option>main bus-stand</option>
-      <option>Near parshuram chouk</option>
-      <option>Nala ki dhani</option>
-      <option>Baajar</option>
-      <option>Rohida</option>
-      <option>Gurjaro ki dhani</option>
-      <option>other</option>
-    </select>
+        <select name="Location Type" required data-save>
+          <option value="">Nearby-location</option>
+          <option>main bus-stand</option>
+          <option>Near parshuram chouk</option>
+          <option>Nala ki dhani</option>
+          <option>Baajar</option>
+          <option>Rohida</option>
+          <option>Gurjaro ki dhani</option>
+          <option>other</option>
+        </select>
 
-    <input type="search" name="Location" placeholder="Full Address / Landmark" required data-save>
+        <input type="search" name="Location" placeholder="Full Address / Landmark" required data-save>
 
+        <textarea name="describe" placeholder="Write the things you didn't get on our site"></textarea>
 
-
-
-    <textarea name="describe" placeholder="Write the Things you don't get on our site"></textarea>
-
-    <button type="submit" class="btn">Submit Order</button>
-  </form>
-
-  <ul id="cartList" class="cart-list"></ul>
+        <button type="submit" class="primary">
+          <span>Submit Order</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+    </section>
+  </main>
 
   <script>
     (function () {
