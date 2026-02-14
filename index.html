@@ -63,54 +63,51 @@
                     </div>
                 </a>
 
-                <!-- <a href="">
-                    <div>
-                        <h2>DODIYANA</h2>
-                        <p>Nearby Areas</p>
-                    </div>
-                </a> -->
+                <form action="search.html" method="GET" class="sec search-box nav-search-link">
+                    <input type="text" name="q" class="search-bar" placeholder="Search items..." />
+                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
 
-                <a href="search.html" style="width: 50%;">
-                    <form action="search.html" method="GET" class="sec search-box" style="width: 100%;">
-                        <input type="text" name="q" class="search-bar" placeholder="Search items..." />
-                        <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </form>
-                </a>
+                <div class="nav-actions">
+                    <a href="cart.html" class="cart-link">
+                        <div class="cart-button" disabled>
+                            <div class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                            <div class="cart-text">My Cart</div>
+                        </div>
+                    </a>
 
-
-                <!-- 🛒 -->
-                <a href="cart.html" class="cart-link">
-                    <div class="cart-button" disabled>
-                        <div class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></div>
-                        <div class="cart-text">My Cart</div>
-                    </div>
-                </a>
-
-                <a href="order.html" class="cart-link">
-                    <div class="cart-button" disabled>
-                        <div class="cart-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
-                        <div class="cart-text">Quick Order</div>
-                    </div>
-                </a>
+                    <a href="order.html" class="cart-link">
+                        <div class="cart-button" disabled>
+                            <div class="cart-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                            <div class="cart-text">Quick Order</div>
+                        </div>
+                    </a>
+                </div>
 
             </div>
 
             <div class="navbar-secondary h-scroll" id="hScroll" tabindex="0 " style="overflow-x: scroll;">
 
-                <a href="#first-category">Tranding</a>
-                <a href="#fist-one">Grains & Careals</a>
-                <a href="#second-one">Pulses & Legumes</a>
-                <a href="#second-category">Spices & Masala </a>
-                <a href="#third-category">Tea, Coffee & Beverages</a>
-                <a href="#fourth-category">Biscuits & Snacks</a>
-                <a href="#fifth-category">Cooking Oil & Ghee </a>
-                <a href="#sixth-category">Hygiene & Selfcare</a>
-                <a href="#sixth-one-category">Cleaning & Household</a>
-                <a href="#seventh-category">Stationery & General Items</a>
-                <a href="#eighth-category">Mobile accesseries</a>
-
-
+                <a href="#first-category"><i class="fa-solid fa-fire nav-pill-icon"></i><span>Trending</span></a>
+                <a href="#first-one"><i class="fa-solid fa-seedling nav-pill-icon"></i><span>Grains & Cereals</span></a>
+                <a href="#second-one"><i class="fa-solid fa-bowl-food nav-pill-icon"></i><span>Pulses &
+                        Legumes</span></a>
+                <a href="#second-category"><i class="fa-solid fa-pepper-hot nav-pill-icon"></i><span>Spices &
+                        Masala</span></a>
+                <a href="#third-category"><i class="fa-solid fa-mug-hot nav-pill-icon"></i><span>Tea, Coffee &
+                        Beverages</span></a>
+                <a href="#fourth-category"><i class="fa-solid fa-cookie-bite nav-pill-icon"></i><span>Biscuits &
+                        Snacks</span></a>
+                <a href="#fifth-category"><i class="fa-solid fa-bottle-droplet nav-pill-icon"></i><span>Cooking Oil &
+                        Ghee</span></a>
+                <a href="#sixth-category"><i class="fa-solid fa-pump-soap nav-pill-icon"></i><span>Hygiene &
+                        Selfcare</span></a>
+                <a href="#sixth-one-category"><i class="fa-solid fa-soap nav-pill-icon"></i><span>Cleaning &
+                        Household</span></a>
+                <a href="#seventh-category"><i class="fa-solid fa-pencil nav-pill-icon"></i><span>Stationery & General
+                        Items</span></a>
+                <a href="#eighth-category"><i class="fa-solid fa-mobile-screen-button nav-pill-icon"></i><span>Mobile
+                        Accessories</span></a>
 
             </div>
         </nav>
@@ -118,17 +115,18 @@
         <section class="hero-section" style="height: 60vh;">
             <div class="div-blur"></div>
             <div class="hero-title" style="z-index: 1; text-align: center;">
-                
+
                 <span class="exile-regular" style="color: #ff9900; font-size: 4em; font-weight: 900;">AUR</span>
                 <span class="exile-regular" style="color: #4caf4f; font-size: 4em; font-weight: 900;">OO </span>
                 <span style="color: #fff; font-size: 4em; font-weight: 900;"> Kai Levo
                     Saa</span>
             </div>
             <div>
-                <p style="font-size: 1.1em; font-weight: 500; color: #ffffff; position: relative; z-index: 3;">
+                <p style="font-size: 1.1em; font-weight: 500; color: #ffffff; position: relative; z-index: 3; padding: 0 10px;
+    text-align: center;">
                     Anshu general store X Ayushi Mobiles in Dodiyana, Nagaur
                 </p>
-                
+
             </div>
 
             <div class="quick-order">
@@ -149,18 +147,6 @@
             </div>
 
             <div class="category h-scroll" id="hScroll" tabindex="0">
-                <div class="product-view">
-                    <img src="images-third\1767591479334.webp" alt="fryums">
-
-
-                    <div class="product" data-name="fryums 1kg" data-price="65">
-                        <span class="product-name">Fryums 1kg</span>
-                        <span class="product-price">₹65</span>
-                        <button onclick="addToCart('fryums 1kg', 65)"><span>Add</span>
-                        </button>
-                    </div>
-                </div>
-
                 <div class="product-view">
                     <img src="https://static.vecteezy.com/system/resources/previews/008/924/633/non_2x/rice-package-mockup-thailand-food-products-illustration-vector.jpg"
                         alt="rise">
@@ -1222,27 +1208,26 @@
         let lastScrollY = window.scrollY;
 
         const navbar = document.getElementById("navbar");
+        const navbarPrimary = document.querySelector(".navbar-primery");
         const cartBtn = document.querySelector(".cart-btn-link");
 
         window.addEventListener("scroll", () => {
             const currentScroll = window.scrollY;
+            const scrollingDown = currentScroll > lastScrollY;
+            const scrollingUp = currentScroll < lastScrollY;
+            const passedThreshold = currentScroll > 80;
 
-            // Navbar: hide on scroll down
-            if (currentScroll > lastScrollY && currentScroll > 80) {
+            if (passedThreshold && scrollingDown) {
                 navbar.classList.add("hide");
-            } else {
+                if (cartBtn) cartBtn.classList.add("show");
+            } else if (scrollingUp || currentScroll <= 80) {
                 navbar.classList.remove("hide");
+                if (navbarPrimary) navbarPrimary.classList.remove("hide");
+                if (cartBtn) cartBtn.classList.remove("show");
             }
 
-            // Cart button: show on scroll down
-            if (currentScroll > lastScrollY && currentScroll > 80) {
-                cartBtn.classList.add("show");
-            } else {
-                cartBtn.classList.remove("show");
-            }
-
-            lastScrollY = currentScroll;
-        });
+            lastScrollY = Math.max(currentScroll, 0);
+        }, { passive: true });
 
         function handleAdd(btn, name, price) {
             addToCart(name, price);
@@ -1252,6 +1237,25 @@
                 btn.classList.remove("added");
             }, 900);
         }
+
+        const navChips = document.querySelectorAll(".navbar-secondary a");
+
+        function setActiveChipFromHash() {
+            const activeHash = window.location.hash || "#first-category";
+            navChips.forEach((chip) => {
+                chip.classList.toggle("active", chip.getAttribute("href") === activeHash);
+            });
+        }
+
+        navChips.forEach((chip) => {
+            chip.addEventListener("click", () => {
+                navChips.forEach((item) => item.classList.remove("active"));
+                chip.classList.add("active");
+            });
+        });
+
+        window.addEventListener("hashchange", setActiveChipFromHash);
+        window.addEventListener("DOMContentLoaded", setActiveChipFromHash);
     </script>
 
     <script src="js/cart.js"></script>
