@@ -121,7 +121,7 @@ section .quick-order a:focus {
 .logo {
   padding: 0 10px;
   letter-spacing: 1px;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+  text-shadow: 2px 2px 3px #222;
   animation: navPulse 3s ease-in-out infinite;
 }
 
@@ -130,7 +130,7 @@ section .quick-order a:focus {
   display: flex;
   gap: 0px;
   padding: 10px 14px;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   background: var(--nav-surface);
   border-bottom: 1px solid rgba(32, 50, 37, 0.08);
@@ -157,7 +157,7 @@ section .quick-order a:focus {
   display: flex;
   gap: 0;
   align-items: center;
-  width: 60%;
+  max-width: 60%;
   background: #ffffff;
   border: 1px solid rgba(28, 58, 34, 0.15);
   border-radius: 14px;
@@ -220,7 +220,7 @@ section .quick-order a:focus {
   align-items: center;
   gap: 9px;
   margin: 0;
-  padding: 10px 14px;
+  padding: 2px 8px;
   min-height: 48px;
   border-radius: 14px;
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(240, 247, 242, 0.9));
@@ -276,8 +276,9 @@ section .quick-order a:focus {
 /* -------------------------------------- */
 
 .hero-section {
+  margin-top: 94px;
   width: 100%;
-  height: 50vh;
+  height: 60vh;
   background: url('../assets/vector-bg-kirana.webp') no-repeat center center/cover;
   display: flex;
   justify-content: center;
