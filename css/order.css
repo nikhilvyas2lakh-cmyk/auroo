@@ -238,3 +238,12 @@ button {
     align-items: stretch;
   }
 }
+
+@media (max-width: 600px) {
+    .search-box {
+        width: 23% !important;
+        display: flex;
+        justify-content: flex-start;
+        border: none;
+    }
+}
